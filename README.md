@@ -63,11 +63,11 @@
 |phone_number|integer|unique: true|
 |user_id|references|null: false, foreign_key: true|
 
-###Association
+### Association
 - belongs_to :user
 
 
-##credit_cardテーブル
+## credit_cardテーブル
 |Column|Type|Options|
 |------|----|-------|
 |card_number|integer|unique: true|
@@ -76,11 +76,11 @@
 |security_code|integer|
 |user_id|references|null: false, foreign_key: true|
 
-###Association
+### Association
 - belongs_to :user
 
 
-##shipmentsテーブル
+## shipmentsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |fee|string|null: false|
@@ -88,7 +88,7 @@
 |days|string|null: false|
 |item_id|references|null: false, foreign_key: true|
 
-###Association
+### Association
 - belongs_to :item
 
 
@@ -98,7 +98,7 @@
 |image|string|
 |item_id|references|null: false, foreign_key: true|
 
-###Association
+### Association
 - belongs_to :item
 
 
