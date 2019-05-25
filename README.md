@@ -108,7 +108,7 @@
 |name|string|unique: ture|
 |item_id|references|null: false, foreign_key: true|
 
-###Association
+### Association
 - belongs_to :item
 
 
