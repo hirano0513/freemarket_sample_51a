@@ -18,10 +18,10 @@
 ## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|index: true, null: false|
+|title|string|index: true, null: false|
 |price|integer|null: false|
 |size|string|null: false|
-|itme_status|string|null: false|
+|item_status|string|null: false|
 |sales_status|string|null: false|
 |like|integer|
 |seller_id|references|null: false, foreign_key: true|
@@ -50,10 +50,11 @@
 - belongs_to :item
 
 
-## personalテーブル
+## personalsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
+|kana_name|string|null: false|
 |postal_code|integer|null: false|
 |prefectures|string|null: false|
 |city|string|null: false|
@@ -67,7 +68,7 @@
 - belongs_to :user
 
 
-## credit_cardテーブル
+## credit_cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |card_number|integer|unique: true|
@@ -105,11 +106,11 @@
 ## brandsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|unique: ture|
+|name|string|unique: true|
 |item_id|references|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :item
+- has_many :items
 
 
 ## categoriesテーブル
