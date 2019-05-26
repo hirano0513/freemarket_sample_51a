@@ -21,7 +21,7 @@
 |name|string|index: true, null: false|
 |price|integer|null: false|
 |size|string|null: false|
-|itme_status|string|null: false|
+|item_status|string|null: false|
 |sales_status|string|null: false|
 |like|integer|
 |seller_id|references|null: false, foreign_key: true|
@@ -30,7 +30,7 @@
 ### Association
 - has_many :comments
 - has_many :images
-- has_many :itmes_categories
+- has_many :items_categories
 - has_many :categories, through: :items_categories
 - belongs_to :user
 - belongs_to :shipment
