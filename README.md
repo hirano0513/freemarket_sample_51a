@@ -57,7 +57,7 @@
 |name|string|null: false|
 |kana_name|string|null: false|
 |postal_code|integer|null: false|
-|prefectures|string|null: false|
+|prefectures|integer|null: false|
 |city|string|null: false|
 |address|string|null: false|
 |building_name|string|
@@ -67,6 +67,7 @@
 
 ### Association
 - belongs_to :user
+- belongs_to_active_hash :prefectures
 
 
 ## credit_cardsテーブル
@@ -89,9 +90,11 @@
 |method|integer|null: false, default: 0|
 |days|sinteger|null: false, default: 0|
 |item_id|references|null: false, foreign_key: true|
+|prefectures|integer|null: false|
 
 ### Association
-- belongs_to_active_hash :item
+- belongs_to_active_hash :prefectures
+- belongs_to :item
 
 
 ## imagesテーブル
