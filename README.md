@@ -18,7 +18,7 @@
 ## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|title|string|index: true, null: false|
+|name|string|index: true, null: false|
 |price|integer|null: false|
 |size|string|null: false|
 |item_status|string|null: false|
@@ -84,7 +84,7 @@
 ## shipmentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|fee|string|null: false|
+|cost_payer|string|null: false|
 |method|string|null: false|
 |days|string|null: false|
 |item_id|references|null: false, foreign_key: true|
