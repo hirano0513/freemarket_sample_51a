@@ -20,12 +20,13 @@
 |------|----|-------|
 |name|string|index: true, null: false|
 |price|integer|null: false|
-|size|string|null: false|
-|item_status|string|null: false|
-|sales_status|string|null: false|
+|size|integer|null: false, default: 0|
+|item_status|integer|null: false, default: 0|
+|sales_status|integer|null: false, default: 0|
 |like|integer|
 |seller_id|references|null: false, foreign_key: true|
 |buyer_id|references|null: false, foreign_key: true|
+|brand_id|references|null: false, foreign_key: true|
 
 ### Association
 - has_many :comments
@@ -41,7 +42,7 @@
 ## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text|
+|text|text|null: false|
 |user_id|references|null: false, foreign_key: true|
 |item_id|references|null: false, foreign_key: true|
 
@@ -84,19 +85,19 @@
 ## shipmentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|cost_payer|string|null: false|
-|method|string|null: false|
-|days|string|null: false|
+|cost_payer|integer|null: false, default: 0|
+|method|integer|null: false, default: 0|
+|days|sinteger|null: false, default: 0|
 |item_id|references|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :item
+- belongs_to_active_hash :item
 
 
 ## imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|image|string|
+|image|string|null: false|
 |item_id|references|null: false, foreign_key: true|
 
 ### Association
@@ -107,7 +108,6 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|unique: true|
-|item_id|references|null: false, foreign_key: true|
 
 ### Association
 - has_many :items
