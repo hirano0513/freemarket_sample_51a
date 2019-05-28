@@ -79,3 +79,4 @@ gem "omniauth-google-oauth2"
 gem 'haml-rails'
 gem 'erb2haml'
 gem "mini_magick"
+gem "font-awesome-rails"
