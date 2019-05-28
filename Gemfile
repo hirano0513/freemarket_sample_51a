@@ -44,6 +44,8 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
 end
 
 group :development do
@@ -78,3 +80,7 @@ gem "omniauth-twitter"
 gem "omniauth-google-oauth2"
 gem 'haml-rails'
 gem "mini_magick"
+gem 'font-awesome-rails'
+gem 'pry-rails'
+gem 'erb2haml'
+gem 'dotenv-rails'
