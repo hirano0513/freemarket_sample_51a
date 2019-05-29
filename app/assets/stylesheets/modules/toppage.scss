@@ -22,6 +22,7 @@
         width: auto;
         margin: 0 auto;
         display: flex;
+        padding-top: 26px;
         .section {
           margin: 0 0 0 20px;
           width: 213px;
@@ -60,6 +61,8 @@
             }
             &__lead {
               font-size: 10px;
+              text-align: left;
+              font-weight: 100;
             }
           }
         }
@@ -76,6 +79,11 @@
 .btn {
   text-decoration: none;
   color: #0099e8;
+}
+.menu-btn {
+  text-decoration: none;
+  color: #0099e8;
+  font: 100% sans-serif;
 }
 .item-image {
   position: absolute;
