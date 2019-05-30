@@ -2,8 +2,8 @@
 
 class Users::RegistrationsController < Devise::RegistrationsController
   def create
-    #binding.pry
-     if params[:user][:password] == "" #sns登録なら
+    # binding.pry
+     if session["devise.sns_id"] != nil #sns登録なら
        params[:user][:password] = "Devise.friendly_token.first(6)" #deviseのパスワード自動生成機能を使用
        params[:user][:password_confirmation] = "Devise.friendly_token.first(6)"
        super
@@ -14,7 +14,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
        super
      end
    end
- 
+  #  "user"=>{"nickname"=>"平野篤史", "email"=>"shimaimo39@gmail.com", "password"=>"", "password_confirmation"=>""}, "commit"=>"Sign up", "controller"=>"users/registrations", "action"=>"create"}
+  # "user"=>{"nickname"=>"aaa", "email"=>"aaa@gmail.com", "password"=>"", "password_confirmation"=>""}, "commit"=>"Sign up", "controller"=>"users/registrations", "action"=>"create"}
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
