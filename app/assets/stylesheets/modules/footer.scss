@@ -1,0 +1,57 @@
+.footer {
+  .banner {
+    background: url(https://cdn.pixabay.com/photo/2019/05/19/19/21/pair-4214914_1280.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 260px;
+    .banner-pc {
+      overflow: hidden;
+      position: relative;
+      width: 750px;
+      height: 260px;
+      margin: 0 auto;
+      .banner-pc-inner {
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+        .banner-title {
+          text-shadow: 0 0 5px rgba(0,0,0,0.4);
+          font-size: 24px;
+          font-weight: bold;
+          color: white;
+        }
+        .banner-lead {
+          text-shadow: 0 0 5px rgba(0,0,0,0.4);
+          font-size: 35px; 
+          color: white;
+        }
+        .banner-icon {
+          margin: 20px 0 0;
+          &__mercari {
+            float: left;
+          }
+          .clearfix {
+            float: left;
+            margin: 0 0 0 8px;
+            line-height: 68px;
+            &--list {
+              float: left;
+              margin: 12px 0 0 16px;
+              list-style: none;
+            }
+          }
+        }
+      }
+      figure {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 300px;
+        .pc-image {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
