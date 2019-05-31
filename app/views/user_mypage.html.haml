@@ -1,102 +1,87 @@
 .user_mypage
+  .head
+    %link{href: "https://use.fontawesome.com/releases/v5.6.1/css/all.css", rel: "stylesheet"}
+    %meta{content: "width=device-width,initial-scale=1.0,minimum-scale=1.0", name: "viewport"}/
   .header
 
   .body
+    .bread-crumbs
+      %ul.itemscoap
+        %li
+          =link_to 'メルカリ', '#', class: 'title'
+          %i.fas.fa-chevron-right
+        %li
+          =link_to 'マイページ', '#', class: 'my-page'
     .default-container
-      %main.container.clearfix
+
+      = render 'render/sidelist'
+
+      .container
         .content
-          %section.mypage-user-icon
-            -# ここにプロフィールへのリンク
-            %h2.bold
-              ユーザーネーム
-          %section.mypage-tab-container
-            %h2.mypage-tab-head
-              購入した商品
-            %ul.mypage-tabs
-              %li.active
-                %h3
-                  -# 取引中ページへのリンク
-                  取引中
-              %li
-                %h3
-                  -# 過去の取引へのリンク
-                  過去の取引
-        .side
-          %nav.mypage-nav
-            %ul.mypage-nav-list
-              %li
-                .mypage-nav-list-item.active
-                マイページ    
-              %li
-                .mypage-nav-list-item
-                お知らせ  
-              %li
-                .mypage-nav-list-item
-                やることリスト                  
-              %li
-                .mypage-nav-list-item
-                いいね！一覧                  
-              %li
-                .mypage-nav-list-item
-                出品する                  
-              %li
-                .mypage-nav-list-item
-                出品した商品-出品中                 
-              %li
-                .mypage-nav-list-item
-                出品した商品-取引中
-              %li
-                .mypage-nav-list-item
-                出品した商品-売却済み
-              %li
-                .mypage-nav-list-item
-                購入した商品-取引中
-              %li
-                .mypage-nav-list-item
-                購入した商品-過去の取引
-              %li
-                .mypage-nav-list-item
-                ニュース一覧
-              %li
-                .mypage-nav-list-item
-                評価一覧
-              %li
-                .mypage-nav-list-item
-                ガイド
-              %li
-                .mypage-nav-list-item
-                お問い合わせ
-            %h3.mypage-nav-head
-              メルペイ
-            %ul.mypage-nav-list
-              %li
-                .mypage-nav-list-item
-                売上・振込申請
-              %li
-                .mypage-nav-list-item
-                ポイント
-            %h3.mypage-nav-head
-              設定
-            %ul.mypage-nav-list
-              %li
-                .mypage-nav-list-item
-                プロフィール
-              %li
-                .mypage-nav-list-item
-                発送元・お届け先住所変更
-              %li
-                .mypage-nav-list-item
-                支払い方法
-              %li
-                .mypage-nav-list-item
-                メール/パスワード
-              %li
-                .mypage-nav-list-item
-                本人情報
-              %li
-                .mypage-nav-list-item
-                電話番号の確認
-              %li
-                .mypage-nav-list-item
-                ログアウト
-  .footer
+          .user-profile
+            %img.user-profile__icon
+              =image_tag 'https://static.mercdn.net/images/member_photo_noimage_thumb.png', class: 'usericon'
+            .user-profile__name
+              =link_to 'ユーザーネーム', '#', class: 'username'
+            .user-profile__number
+              評価　131　出品数　140
+          .mypage-list
+            .mypage-list__nav
+              =link_to 'お知らせ', '#', class: 'nav'
+            .mypage-list__todo
+              =link_to 'やることリスト', '#', class: 'todo'
+          %ul
+            %li.nav__list
+              =image_tag 'https://static.mercdn.net/images/mercari_profile.png', class: 'mercari'
+              《明後日まで！》からあげクンととマチカフェコーヒーが半額になるクーポン配信中
+              %br
+              %i.far.fa-clock
+              3時間前
+              %i.fas.fa-chevron-right
+            %li.nav__list
+              =image_tag 'https://static.mercdn.net/images/mercari_profile.png', class: 'mercari'
+              《三井住友銀行、池田泉州銀行にも対応！》メルペイでのお支払いで20%ポイント還元中！
+              %br
+              %i.far.fa-clock
+              1日前
+              %i.fas.fa-chevron-right
+            %li.nav__list
+              =image_tag 'https://static.mercdn.net/images/mercari_profile.png', class: 'mercari'
+              《まだ間に合う！》友達を招待したら"必ず"ポイントがもらえるキャンペーン開催中！
+              %br
+              %i.far.fa-clock
+              3日前
+              %i.fas.fa-chevron-right
+            %li.nav__list
+              =image_tag 'https://static.mercdn.net/images/mercari_profile.png', class: 'mercari'
+              事務局から個別メッセージ「ログイン通知」
+              %br
+              %i.far.fa-clock
+              4日前
+              %i.fas.fa-chevron-right
+            %li.nav__list
+              =image_tag 'https://static.mercdn.net/images/mercari_profile.png', class: 'mercari'
+              《参加ボタンを押すだけ》最大P1,000がもらえるキャンペーン開催中！
+              %br
+              %i.far.fa-clock
+              4日前
+              %i.fas.fa-chevron-right
+            %li.go-list
+              .go-list__inside
+                .go-list__inside--letter
+                  一覧を見る
+            .mypage-tab
+              .mypage-tab__head
+                .mypage-tab__head--text
+                  購入した商品
+                .mypage-tab__list
+                  .mypage-tab__list--trade
+                    =link_to '取引中', '#', class: 'trade'              
+                  .mypage-tab__list--pasttrade
+                    =link_to '過去の取引', '#', class: 'past-trade'
+                .mypage-tab__tradetab--list
+                  取引中の商品がありません           
+        .footer-sell-btn
+          =link_to '出品', '#', class: 'sale'
+          %i.fas.fa-camera           
+    .footer
