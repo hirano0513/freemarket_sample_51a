@@ -1,5 +1,8 @@
 @import "config/reset";
-@import "modules/footer";
-@import "modules/header";
+@import "/config/colors";
 @import "mixins/mixin";
 @import "mixins/vender_prefix";
+@import "modules/footer";
+@import "modules/header";
+
+
