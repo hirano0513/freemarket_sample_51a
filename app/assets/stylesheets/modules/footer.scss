@@ -1,0 +1,145 @@
+.footer {
+  .banner {
+    background: url(https://cdn.pixabay.com/photo/2019/05/19/19/21/pair-4214914_1280.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 260px;
+    .banner-pc {
+      overflow: hidden;
+      position: relative;
+      width: 750px;
+      height: 260px;
+      margin: 0 auto;
+      .banner-pc-inner {
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+        .banner-title {
+          text-shadow: 0 0 5px rgba(0,0,0,0.4);
+          font-size: 24px;
+          font-weight: bold;
+          color: white;
+        }
+        .banner-lead {
+          text-shadow: 0 0 5px rgba(0,0,0,0.4);
+          font-size: 35px; 
+          color: white;
+        }
+        .banner-icon {
+          margin: 20px 0 0;
+          &__mercari {
+            float: left;
+          }
+          .clearfix {
+            float: left;
+            margin: 0 0 0 8px;
+            line-height: 68px;
+            &--list {
+              float: left;
+              margin: 12px 0 0 16px;
+              list-style: none;
+            }
+          }
+        }
+      }
+      figure {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 300px;
+        .pc-image {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .global-footer {
+    padding: 0 20px 10px 20px;
+    background: #212121;
+    color: #fff;
+    height: 400px;
+    .clearfix {
+      width: 1020px;
+      margin: 0 auto;
+      height: 310px;
+      .footer-cell {
+        padding: 0 20px 0 0;
+        width: 18%;
+        vertical-align: top;
+        float: left;
+        margin-top: 18px;
+        &__head {
+          color: #fff;
+          font-size: 16px;
+          font-weight: 100;
+          line-height: 1.4;
+        }
+        ul {
+          list-style: none;
+          li {
+            margin: 16px 0 0;
+            color: #fff;
+            display: list-item;
+            .list-btn {
+              display: block;
+              opacity: .7;
+              color: #fff;
+              font-size: 12px;
+              text-decoration: none;
+              touch-action: manipulation;
+            }
+          }
+          .footer-cell__link {
+            margin: 14px 0 0;
+            display: inline-block;
+            .fab {
+              font-size: 30px;
+              color: #fff;
+              margin-right:15px; 
+              margin-top: 25px;
+            }
+          }
+        }
+      }
+      .footer-cell-2 {
+        width: 21%;
+      }
+      .full-width {
+        width: 40%;
+        .inner-footer-cell {
+          padding: 0 10px 0 0;
+          float: left;
+          padding-left: 10px;
+          vertical-align: top;
+          width: 50%;
+        }
+      }
+      .footer-lang {
+        width: auto;
+      }
+    }
+    .footer-bottom {
+      margin: 30px auto 20px;
+      width: 1020px;
+      .footer-logo {
+        display: inline-block;
+        margin-right: 10px;
+        width: auto;
+        font-size: 12px;
+        vertical-align: middle;
+      }
+      .footer-copyright {
+        width: 745px;
+        display: inline-block;
+        margin: 8px 0 0;
+        text-align: center;
+        vertical-align: sub;
+        small {
+          font-size: 12px;
+          font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,92 @@
+.footer
+  %aside.banner 
+    .banner-pc
+      .banner-pc-inner
+        %h2.banner-title スマホでかんたんフリマアプリ
+        %p.banner-lead 今すぐ無料ダウンロード！
+        .banner-icon.clearfix
+          .banner-icon__mercari
+            = image_tag('//www-mercari-jp.akamaized.net/assets/img/common/common/mercari_icon.png?3856598694', width: 68)
+          %ul.clearfix
+            %li.clearfix--list
+              = link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?3856598694", alt: "", width: "133",height: "40"), '#'
+            %li.clearfix--list
+              = link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?3856598694", alt: "", width: "133", height: "40"), '#'
+      %figure
+        = image_tag("//www-mercari-jp.akamaized.net/assets/img/common/jp/download_content_pc.png?3856598694", alt: "", class: 'pc-image')
+  %footer.global-footer 
+    .clearfix
+      .footer-cell
+        %h2.footer-cell__head  メルカリについて
+        %ul
+          %li
+            = link_to '会社概要（運営会社）', '#', class: 'list-btn'
+          %li
+            = link_to '採用情報', '#', class: 'list-btn'
+          %li
+            = link_to 'プレスリリース', '#', class: 'list-btn'
+          %li
+            = link_to '公式ブログ', '#', class: 'list-btn'
+          %li
+            = link_to 'メルカリロゴ利用ガイドライン', '#', class: 'list-btn'
+          %li.footer-cell__link
+            = link_to 'https://twitter.com/mercari_jp', method: :delete do
+              %i.fab.fa-twitter
+          %li.footer-cell__link
+            = link_to 'https://www.facebook.com/mercarijp', method: :delete do
+              %i.fab.fa-facebook-square
+      .footer-cell.footer-cell-2
+        %h2.footer-cell__head ヘルプ&ガイド
+        %ul
+          %li
+            = link_to 'メルカリガイド', '#', class: 'list-btn'
+          %li
+            = link_to 'らくらくメルカリ便', '#', class: 'list-btn'
+          %li 
+            = link_to 'ゆうゆうメルカリ便', '#', class: 'list-btn'
+          %li 
+            = link_to '大型メルカリ便', '#', class: 'list-btn'
+          %li
+            = link_to '車体取引ガイド', '#', class: 'list-btn'
+          %li 
+            = link_to 'メルカリあんしん・あんぜん宣言！', '#', class: 'list-btn'
+          %li
+            = link_to '偽ブランド品撲滅への取り組み', '#', class: 'list-btn'
+          %li
+            = link_to 'メルカリボックス', '#', class: 'list-btn'
+      .footer-cell.full-width
+        %h2.footer-cell__head プライバシーと利用規約
+        .inner-footer-cell
+          %ul 
+            %li 
+              = link_to 'プライバシーポリシー', '#', class: 'list-btn'
+            %li 
+              = link_to 'メルカリ利用規約', '#', class: 'list-btn'
+            %li 
+              = link_to 'あんしんスマホサポート制度に関する利用特約', '#', class: 'list-btn'
+            %li 
+              = link_to 'コンプライアンスポリシー', '#', class: 'list-btn'
+        .inner-footer-cell-2
+          %ul 
+            %li 
+              = link_to '個人データの安全管理に係る基本方針', '#', class: 'list-btn'
+            %li 
+              = link_to '特定商取引に関する表記', '#', class: 'list-btn'
+            %li 
+              = link_to '資産決算法に基づく表示', '#', class: 'list-btn'
+            %li 
+              = link_to '法令遵守と犯罪抑止のために', '#', class: 'list-btn'
+            %li 
+              = link_to '返品・返金ポリシー', '#', class: 'list-btn'
+      .footer-cell.footer-lang
+        %h2.footer-cell__head 国
+        %ul
+          %li 
+            = link_to '日本', '#', class: 'list-btn'
+          %li 
+            = link_to 'United States', '#', class: 'list-btn'
+    .footer-bottom
+      = link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo-white.svg?2399382397", class: "footer-logo", width: '124', height: '33', alt: 'mercari' ), '/'
+      %span.footer-copyright
+        %small © 2019 Mercari
+      

@@ -1,54 +1,292 @@
 .user_mypage {
-  .header {
-
-  }
-  .body {
-    position: relative;
-    min-height: 100%;
-    background: #f5f5f5;
-    .default-container {
-      background-color: #eee;   
-      .container.clearfix {
-        margin: 24px auto 0;
-        padding: 0 0 40px;
-        display: block;
-        .content {
-          .mypage-user-icon h2 {
-            margin: 8px 0 0;
+  @media screen and (min-width:300px){
+    .body {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      background: #f5f5f5;
+      font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体' , 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+      font-size: 14px;
+      color: #333;
+      line-height: 1;
+      .bread-crumbs {
+        background-color: #fff;
+        height: 50px;
+        border-top: 1px solid #eee;
+        box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+        .itemscoap{
+          display: flex;
+          line-height: 50px;
+          .title {
+            color: #333;
+            text-decoration: none;
             font-size: 14px;
-            .bold {
-              font-weight: 600;
-            }
+            margin: 0 0 0 60px;
           }
-          .mypage-tab-container {
-            .mypage-tab-head {
-
+          .fas.fa-chevron-right {
+            color: #333;
+            font-size: 14px;
+            margin: 10px 10px;
+          }
+          .my-page {
+            font-size: 14px;
+            color: #333;
+            font-weight: 700;
+            text-decoration: none;
+          }
+        }
+      }
+      .default-container {
+        display: flex;
+        height: 1292px;
+        width: 1020px;
+        margin: 40px auto 0;
+        .side {
+          width: 280px;
+          margin: 0 40px 0 0;
+          position: relative;
+          .side-list {
+            &__head {
+              font-size: 16px;
+              font-weight: 700;
+              height: 15px;
+              width: 280px; 
+              padding: 40px 0 0 0;
+              background-color: #f5f5f5;
+            } 
+            &__item--active {
+              background-color: #eee;
+              font-weight: 700;
+              border-bottom: 1px solid #eee;
+              height: 13px;
+              width: 240px; 
+              padding: 17px 20px;
+              cursor: pointer;
+              .mypage{
+                font-size: 14px;
+                text-decoration: none;
+                color: #333;
+              }
+              .fas.fa-chevron-right {
+                color: #ccc;
+                float: right;
+                font-size: 16px;
+              }
             }
-            .mypage-tabs a {
-
-              .li {               
-                .h3 {
+            &__item {
+              border-bottom: 1px solid #eee;
+              height: 13px;
+              width: 240px; 
+              padding: 17px 20px;
+              background-color: #fff;
+              cursor: pointer;   
+              .item{   
+                font-size: 14px;
+                text-decoration: none;
+                color: #333;
+              }
+              .fas.fa-chevron-right {
+                color: #ccc;
+                float: right;
+                font-size: 16px;
+              }
+            } 
+          }
+        }
+        .container { 
+          margin: 0;
+          .content {
+            width: 700px;
+            height: 1200px;
+            margin: 0;
+            .user-profile {
+              background-image: url("user-background.jpg");
+              position: relative;
+              height: 200px;
+              width: 100%;
+              text-align: center;
+              margin: 0 auto 0;
+              cursor: pointer;
+              .usericon {
+                width: 60px;
+                height: 60px;
+                margin: 50px 0 4px 0;
+                border-radius: 50%;              
+              }
+              &__name {
+                margin: 0 0 8px 0;
+                .username {
+                  text-decoration: none;
+                  color: #333;
+                  font-size: 14px;
+                  font-weight: 800;
+                }
+              }
+            }
+            .mypage-list {
+              display: flex;
+              margin-top: 0;
+              &__nav {
+                background-color: #fff;
+                font-size: 16px;
+                font-weight: 800;
+                height: 79px;
+                width: 100%;  
+                text-align: center;
+                border-top: 1px solid red;
+                cursor: pointer;
+                .nav {
+                  line-height: 79px;
+                  color: #333;
+                  text-decoration: none;
+                }
+              }
+              &__todo {
+                background-color: #eee;
+                font-size: 16px;
+                font-weight: 800;
+                height: 80px;
+                width: 100%; 
+                text-align: center;
+                cursor: pointer;
+                .todo {
+                  line-height: 80px;
+                  color: #333;
+                  text-decoration: none;
+                }
+              }
+            }
+            .nav__list {
+              background-color: #fff;
+              border-bottom: 1px solid #eee;
+              height: 65px;
+              width: 700px; 
+              padding: 20px 0 0 0; 
+              font-size: 14px;
+              font-weight: 400; 
+              line-height: 20px;
+              cursor: pointer;
+              .mercari {
+                float: left;
+                width: 50px;
+                height: 50px;
+                margin: 0 15px 7px 17px;
+              } 
+              .far.fa-clock {
+                color: #ccc;
+              }
+              .fas.fa-chevron-right {
+                color: #333;
+                float: right;
+                font-size: 16px;
+                margin-right: 15px;            
+              }
+            }
+            .go-list {
+              text-align: center;
+              background-color: #fff;
+              height: 70px;
+              width: 700px;
+              margin: 0;
+              padding-top: 15px;
+              &__inside {
+                margin: 0 15px 15px 15px;
+                background-color: #eee;
+                height: 55px;
+                width: 670px;
+              }
+              &__inside--letter {
+                line-height: 55px;
+              }
+            } 
+            .mypage-tab {
+              margin-top: 40px;
+              &__head {
+                height: 80px;
+                line-height: 72px;
+                color: #333;
+                text-decoration: none;
+                background-color: #fafafa;
+                font-weight: 800;
+                font-size: 16px;
+              }
+              &__head--text {
+                  margin: 0 0 0 15px;
+              }
+              &__list {
+                display: flex;
+                cursor: pointer;
+              }
+              &__list--trade {
+                background-color: #fff;
+                font-size: 16px;
+                font-weight: 800;
+                height: 80px;
+                width: 100%; 
+                text-align: center;
+                border-top: 1px solid red;
+                .trade {
+                  text-decoration: none;
+                  color: #333;
+                  line-height: 40px;
+                }
+              }
+              &__list--pasttrade {
+                background-color: #eee;
+                font-size: 16px;
+                font-weight: 800;
+                height: 80px;
+                width: 100%; 
+                text-align: center;
+                .past-trade {
+                  text-decoration: none;
+                  color: #333;
+                  line-height: 40px;
+                }
+              }
+                &__tradetab--list {
+                  height: 20px;
+                  color: #ccc;
+                  text-align: center;
+                  line-height: 50px;
+                  background-color: #fff;
+                  background-image: url("logo-gray-icon.svg");
+                  background-repeat: no-repeat;
+                  padding: 160px 0 60px;
+                  background-position: center 60px;
+                  background-size: 78px 85px;
+                  font-size: 16px;
                 }
               }
             }
           }
         }
-        .side {
-          .mypage-nav {
-            .mypage-nav-list {
-
-              .li{                
-              }
-            }
-            .mypage-nav-head {
-            }
+        .footer-sell-btn {
+          bottom: 32px;
+          right: 32px;
+          width: 160px;
+          height: 160px;
+          font-size: 22px;
+          position: fixed;
+          border-radius: 50%;
+          background: #ea352d;
+          color: #fff;
+          text-align: center;
+          z-index: 1000;
+          cursor: pointer;
+          .sale {
+            text-decoration: none;
+            color: #fff;
+            touch-action: none;
+            position: absolute;
+            margin: 32px 20px 0 7px;
+          }
+          .fas.fa-camera {
+            margin-top: 60px;
+            font-size: 60px;
+            display: inline-block;
           }
         }
       }
     }
   }
-  .footer {
-
-  }
-}
-

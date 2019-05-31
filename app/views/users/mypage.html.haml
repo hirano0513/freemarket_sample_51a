@@ -1,0 +1,83 @@
+.user_mypage
+  .head
+    %link{href: "https://use.fontawesome.com/releases/v5.6.1/css/all.css", rel: "stylesheet"}
+    %meta{content: "width=device-width,initial-scale=1.0,minimum-scale=1.0", name: "viewport"}/
+  .body
+    .bread-crumbs
+      %ul.itemscoap
+        %li
+          =link_to 'メルカリ', '#', class: 'title'
+          %i.fas.fa-chevron-right
+        %li
+          =link_to 'マイページ', '#', class: 'my-page'
+    .default-container
+
+      = render 'render/sidelist'
+
+      .container
+        .content
+          .user-profile
+            %img.user-profile__icon
+              =image_tag 'https://static.mercdn.net/images/member_photo_noimage_thumb.png', class: 'usericon'
+            .user-profile__name
+              =link_to 'ユーザーネーム', '#', class: 'username'
+            .user-profile__number
+              評価　131　出品数　140
+          .mypage-list
+            .mypage-list__nav
+              =link_to 'お知らせ', '#', class: 'nav'
+            .mypage-list__todo
+              =link_to 'やることリスト', '#', class: 'todo'
+          %ul
+            %li.nav__list
+              =image_tag 'https://static.mercdn.net/images/mercari_profile.png', class: 'mercari'
+              《明後日まで！》からあげクンととマチカフェコーヒーが半額になるクーポン配信中
+              %br
+              %i.far.fa-clock
+              3時間前
+              %i.fas.fa-chevron-right
+            %li.nav__list
+              =image_tag 'https://static.mercdn.net/images/mercari_profile.png', class: 'mercari'
+              《三井住友銀行、池田泉州銀行にも対応！》メルペイでのお支払いで20%ポイント還元中！
+              %br
+              %i.far.fa-clock
+              1日前
+              %i.fas.fa-chevron-right
+            %li.nav__list
+              =image_tag 'https://static.mercdn.net/images/mercari_profile.png', class: 'mercari'
+              《まだ間に合う！》友達を招待したら"必ず"ポイントがもらえるキャンペーン開催中！
+              %br
+              %i.far.fa-clock
+              3日前
+              %i.fas.fa-chevron-right
+            %li.nav__list
+              =image_tag 'https://static.mercdn.net/images/mercari_profile.png', class: 'mercari'
+              事務局から個別メッセージ「ログイン通知」
+              %br
+              %i.far.fa-clock
+              4日前
+              %i.fas.fa-chevron-right
+            %li.nav__list
+              =image_tag 'https://static.mercdn.net/images/mercari_profile.png', class: 'mercari'
+              《参加ボタンを押すだけ》最大P1,000がもらえるキャンペーン開催中！
+              %br
+              %i.far.fa-clock
+              4日前
+              %i.fas.fa-chevron-right
+            %li.go-list
+              .go-list__inside
+                .go-list__inside--letter
+                  一覧を見る
+            .mypage-tab
+              .mypage-tab__head
+                .mypage-tab__head--text
+                  購入した商品
+                .mypage-tab__list
+                  .mypage-tab__list--trade
+                    =link_to '取引中', '#', class: 'trade'              
+                  .mypage-tab__list--pasttrade
+                    =link_to '過去の取引', '#', class: 'past-trade'
+                .mypage-tab__tradetab--list
+                  取引中の商品がありません  
+
+        = render 'render/footer-sell-btn'

@@ -1,6 +1,5 @@
 @import "./reset";
 @import "./user-management/personal-style";
-@import "modules/mypage";
 @import "./user-management/personal-mixin";
 @import "./user-management/btn";
 @import "./user-management/form";
@@ -9,3 +8,11 @@
 @import "./user-management/session-page";
 @import "./user-management/registration-page";
 @import "./user-management/signup-page-footer";
+@import "./config/colors";
+@import "mixins/mixin";
+@import "mixins/vender_prefix";
+@import "modules/footer";
+@import "modules/header";
+@import "modules/mypage";
+@import "modules/toppage";
+@import "modules/profile_edit";
