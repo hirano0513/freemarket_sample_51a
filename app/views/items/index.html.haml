@@ -1,0 +1,13 @@
+.top-page
+  .main-container
+    .main-container__heading ピックアップカテゴリー
+    %section.common-container.clearfix
+      %h3.common-container__title 
+        = link_to 'レディース 新着アイテム','#', class: 'btn'
+        = render partial: 'pickup_category'
+  .main-container
+    .main-container__heading ピックアップブランド
+    %section.common-container.clearfix
+      %h3.common-container__title 
+        = link_to 'Supreme 新着アイテム','#', class: 'btn'
+        = render partial: 'pickup_brand'
