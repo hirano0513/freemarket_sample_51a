@@ -305,7 +305,9 @@
     cursor: progress;
   }
   
-  /* Specify the pointer cursor of trigger elements */
+  /* Specify the pointer cursor of trigger elements
+  
+  */
   [aria-controls] {
     cursor: pointer;
   }
