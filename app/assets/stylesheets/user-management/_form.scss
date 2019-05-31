@@ -1,0 +1,45 @@
+.input-default {
+  // デフォルトの入力ボックスに使う
+  @include box-size;
+  height: 48px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+.select-default {
+  // セレクトボックスに使う
+  position: relative;
+  z-index: 2;
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.form-require {
+  // 必須
+  margin: 0 0 0 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  vertical-align: top;
+  &__gray{
+    background-color: gray;
+    color: #fff;
+  }
+}
+
+.form-info-text{
+  margin: 8px 0 0;
+  color: #888;
+  line-height: 1.5;
+}
