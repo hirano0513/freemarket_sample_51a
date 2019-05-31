@@ -285,6 +285,32 @@
             }
           }
         }
+        .footer-sell-btn {
+          bottom: 32px;
+          right: 32px;
+          width: 160px;
+          height: 160px;
+          font-size: 22px;
+          position: fixed;
+          border-radius: 50%;
+          background: #ea352d;
+          color: #fff;
+          text-align: center;
+          z-index: 1000;
+          cursor: pointer;
+          .sale {
+            text-decoration: none;
+            color: #fff;
+            touch-action: none;
+            position: absolute;
+            margin: 32px 20px 0 7px;
+          }
+          .fas.fa-camera {
+            margin-top: 60px;
+            font-size: 60px;
+            display: inline-block;
+          }
+        }
       }
     }
   }
