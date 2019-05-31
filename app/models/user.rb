@@ -43,7 +43,5 @@ class User < ApplicationRecord
         )
       end
     end
-    # hashでsnsのidを返り値として保持しておく
-    return { user: user , sns_id: sns.id }
   end
 end
