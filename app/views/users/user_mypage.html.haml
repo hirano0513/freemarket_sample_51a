@@ -80,8 +80,8 @@
                   .mypage-tab__list--pasttrade
                     =link_to '過去の取引', '#', class: 'past-trade'
                 .mypage-tab__tradetab--list
-                  取引中の商品がありません           
-        .footer-sell-btn
-          =link_to '出品', '#', class: 'sale'
-          %i.fas.fa-camera           
+                  取引中の商品がありません  
+
+        = render 'render/footer-sell-btn'
+        
     .footer
