@@ -1,55 +1,3 @@
-.side {
-  width: 280px;
-  margin: 0 40px 0 0;
-  position: relative;
-  .side-list {
-    &__head {
-      font-size: 16px;
-      font-weight: 700;
-      height: 15px;
-      width: 280px; 
-      padding: 40px 0 0 0;
-      background-color: #f5f5f5;
-    } 
-    &__item--active {
-      background-color: #eee;
-      font-weight: 700;
-      border-bottom: 1px solid #eee;
-      height: 13px;
-      width: 240px; 
-      padding: 17px 20px;
-      cursor: pointer;
-      .mypage{
-        font-size: 14px;
-        text-decoration: none;
-        color: #333;
-      }
-      .fas.fa-chevron-right {
-        color: #ccc;
-        float: right;
-        font-size: 16px;
-      }
-    }
-    &__item {
-      border-bottom: 1px solid #eee;
-      height: 13px;
-      width: 240px; 
-      padding: 17px 20px;
-      background-color: #fff;
-      cursor: pointer;   
-      .item{   
-        font-size: 14px;
-        text-decoration: none;
-        color: #333;
-      }
-      .fas.fa-chevron-right {
-        color: #ccc;
-        float: right;
-        font-size: 16px;
-      }
-    } 
-  }
-}
 .user_mypage {
   @media screen and (min-width:300px){
     .body {
@@ -93,6 +41,58 @@
         height: 1292px;
         width: 1020px;
         margin: 40px auto 0;
+        .side {
+          width: 280px;
+          margin: 0 40px 0 0;
+          position: relative;
+          .side-list {
+            &__head {
+              font-size: 16px;
+              font-weight: 700;
+              height: 15px;
+              width: 280px; 
+              padding: 40px 0 0 0;
+              background-color: #f5f5f5;
+            } 
+            &__item--active {
+              background-color: #eee;
+              font-weight: 700;
+              border-bottom: 1px solid #eee;
+              height: 13px;
+              width: 240px; 
+              padding: 17px 20px;
+              cursor: pointer;
+              .mypage{
+                font-size: 14px;
+                text-decoration: none;
+                color: #333;
+              }
+              .fas.fa-chevron-right {
+                color: #ccc;
+                float: right;
+                font-size: 16px;
+              }
+            }
+            &__item {
+              border-bottom: 1px solid #eee;
+              height: 13px;
+              width: 240px; 
+              padding: 17px 20px;
+              background-color: #fff;
+              cursor: pointer;   
+              .item{   
+                font-size: 14px;
+                text-decoration: none;
+                color: #333;
+              }
+              .fas.fa-chevron-right {
+                color: #ccc;
+                float: right;
+                font-size: 16px;
+              }
+            } 
+          }
+        }
         .container { 
           margin: 0;
           .content {
