@@ -184,4 +184,10 @@
               %li
                 .mypage-nav-list-item
                 ログアウト
-  .footer
+  .footer          .user-profile
+            %img.user-profile__icon
+              =image_tag 'https://static.mercdn.net/images/member_photo_noimage_thumb.png', class: 'usericon'
+            .user-profile__name
+              =link_to 'ユーザーネーム', '#', class: 'username'
+            .user-profile__number
+              評価　131　出品数　140
