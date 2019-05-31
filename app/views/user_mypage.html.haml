@@ -1,4 +1,7 @@
 .user_mypage
+  .head
+    %link{href: "https://use.fontawesome.com/releases/v5.6.1/css/all.css", rel: "stylesheet"}
+    %meta{content: "width=device-width,initial-scale=1.0,minimum-scale=1.0", name: "viewport"}/
   .header
 
   .body
@@ -89,6 +92,7 @@
             %li.side-list__item
               =link_to 'ログアウト', '#', class: 'item'
               %i.fas.fa-chevron-right
+      .container
         .content
           %section.mypage-user-icon
             -# ここにプロフィールへのリンク
