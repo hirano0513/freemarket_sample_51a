@@ -1,0 +1,23 @@
+@mixin arrow-down{
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  z-index: 2;
+  color: #888;
+  font-size: 18px;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
+
+@mixin user-entry-form{
+  display: block;
+  margin: 8px 0 0;
+  border: 1px solid #0099e8;
+  background: #0099e8;
+  color: #fff;
+  line-height: 40px;
+}
+
+@mixin box-size{
+  box-sizing: border-box;
+}

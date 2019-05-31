@@ -1,0 +1,69 @@
+@media screen and (min-width: 769px){
+  // ユーザー管理画面のフッター
+  .registration-footer {
+    @include box-size;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    height: 220px;
+    padding: 40px 0;
+    margin: 0 auto;
+    text-align: center;
+    width: 456px;
+    ul {
+      font-size: 0;
+    }
+    li {
+      display: inline-block;
+      margin: 0 0 0 16px;
+      font-size: 12px;
+    }
+    a {
+      display: block;
+      color: #333;
+    }
+    &__logo {
+      width: 80px;
+      height: 65px;
+      margin: 40px auto 0;
+    }
+    p{
+      margin: 8px 0 0;
+    }
+  }
+}
+
+@media screen and (max-width: 768px){
+  .registration-footer {
+    @include box-size;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    height: 250px;
+    padding: 40px 0;
+    text-align: center;
+    ul {
+      font-size: 0;
+    }
+    li {
+      margin: 16px 0 0;
+      font-size: 12px;
+    }
+    a {
+      display: block;
+      color: #333;
+    }
+    &__logo {
+      width: 80px;
+      height: 65px;
+      margin: 40px auto 0;
+    }
+    p{
+      margin: 8px 0 0;
+    }
+  }
+}

@@ -1,0 +1,61 @@
+.btn-default{
+  // デフォルトのボタン設定
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+  border: 1px solid transparent;
+  transition: all ease-out .3s;
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn-red {
+  // 赤ボタン
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+}
+
+.btn-mail{
+  // メール送信ボタン
+  position: relative;
+  background: #eee;
+  color: #000;
+}
+
+.btn-sns-facebook{
+  // フェイスブック認証に使うボタン
+  position: relative;
+  margin: 16px 0 0;
+  background: #385185;
+  color: #fff;
+  a{
+    color: #fff;
+  }
+  &:first-child{
+    margin: 0;
+  }
+}
+
+.btn-sns{
+  position: relative;
+  i{
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+  }
+  &__google{
+    // google認証に使うボタン
+    margin: 16px 0 0;
+    border: #979797 solid 1px;
+    background: #fff
+                  url("Google_Logo.svg")
+                  no-repeat 3px top;
+    a {
+      color: #333;
+    }
+  }
+}

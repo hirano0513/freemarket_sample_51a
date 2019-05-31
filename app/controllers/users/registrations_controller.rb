@@ -1,16 +1,20 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
+
+  def index
+  end
+
   def create
-     if session["devise.sns_id"] != nil #sns登録なら
-       params[:user][:password] = "Devise.friendly_token.first(6)" #deviseのパスワード自動生成機能を使用
-       params[:user][:password_confirmation] = "Devise.friendly_token.first(6)"
-       super
-       sns = SnsCredential.update(user_id:  @user.id)
-     else #email登録なら
-       super
-     end
-   end
+    if session["devise.sns_id"] != nil #sns登録なら
+      params[:user][:password] = "Devise.friendly_token.first(6)" #deviseのパスワード自動生成機能を使用
+      params[:user][:password_confirmation] = "Devise.friendly_token.first(6)"
+      super
+      sns = SnsCredential.update(user_id:  @user.id)
+    else #email登録なら
+      super
+    end
+  end
 
   # GET /resource/sign_up
   # def new
