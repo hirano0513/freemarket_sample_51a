@@ -1,17 +1,32 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+.personal-entry
+  %header.personal-entry__header
+    %h1
+      = link_to root_path do
+        = image_tag "logo.svg", alt: "mercari"
+  %main.personal-entry-main
+    %section.login-panel
+      %h2.login-no-account
+        %p アカウントをお持ちでない方はこちら
+        = link_to users_sign_up_index_path do
+          新規会員登録
+      .login-form-inner
+        %button#facebook-login.btn-default.btn-sns.btn-sns-facebook
+          %i.icon-facebook
+            = image_tag "facebook-icon.svg", alt:"facebook", width: "26px",height: "26px";
+          = link_to user_facebook_omniauth_callback_path do
+            Facebookでログイン
+        %button#google-login.btn-default.btn-sns.btn-sns__google
+          =link_to user_google_oauth2_omniauth_callback_path do
+            Googleでログイン
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .login-form-content
+          %ul
+            %li
+              = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class: "input-default"
+            %li
+              = f.password_field :password, autocomplete: "current-password", placeholder: "パスワード", class: "input-default"
+            %li.actions
+              = f.submit "ログイン", class:"btn-default btn-red"
+            = link_to new_user_password_path do
+              パスワードをお忘れの方
+  = render "layouts/entry-footer"
