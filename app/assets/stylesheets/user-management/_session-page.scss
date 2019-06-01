@@ -1,15 +1,8 @@
-.password-reset-done {
-  margin: 0;
-  font-size: 16px;
-  line-height: 1.5;
-  a {
-    display: block;
-    margin: 40px 0 0;
-    text-align: center;
-  }
-}
-
 .personal-entry-main{
+  @include entry-page-body;
+  @include box-size;
+  border-top: 1px solid #f5f5f5;
+  padding: 40px;
   @media screen and (min-width: 769px){
     .login-panel{
       max-width: 456px;
@@ -17,6 +10,8 @@
       background: #fff;
       a {
         display: block;
+        text-decoration: none;
+
       }
       .login-no-account {
         padding: 40px 64px;
@@ -33,13 +28,31 @@
         border-top: 1px solid #eee;
       }
       .login-form-content{
-        padding: 40px 64px;
+        padding: 24px 64px 32px;
         border: 0;
         li:first-child{
           margin: 0;
         }
-        li {
+        li{
           margin: 24px 0 0;
+          label{
+            font-weight: 600;
+          }
+          .form-require{
+            background: #ea352d;
+          }
+          .input-default{
+            width: 100%;
+            margin: 8px 0 0;
+          }
+          p{
+            margin: 8px 0 0;
+            line-height: 1.5;
+            &.password-reset-info{
+              font-size: 12px;
+              color: #888;
+            }
+          }
           .login-submit{
             margin: 24px 0 0;
           }
@@ -49,6 +62,7 @@
         }
         a {
           margin: 40px 0 0;
+          text-decoration: none;
         }
       }
     }
@@ -60,6 +74,7 @@
       background: #fff;
       a {
         display: block;
+        text-decoration: none;
       }
       .login-no-account {
         padding: 24px 32px;
@@ -81,8 +96,26 @@
         li:first-child{
           margin: 0;
         }
-        li {
+        li{
           margin: 24px 0 0;
+          label{
+            font-weight: 600;
+          }
+          .form-require{
+            background: #ea352d;
+          }
+          .input-default{
+            width: 100%;
+            margin: 8px 0 0;
+          }
+          p{
+            margin: 8px 0 0;
+            line-height: 1.5;
+            &.password-reset-info{
+              font-size: 12px;
+              color: #888;
+            }
+          }
           .login-submit{
             margin: 24px 0 0;
           }
@@ -92,6 +125,7 @@
         }
         a {
           margin: 40px 0 0;
+          text-decoration: none;
         }
       }
     }
