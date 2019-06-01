@@ -10,11 +10,11 @@
   color: #fff;
   text-align: center;
   z-index: 1000;
+  touch-action: none;
   cursor: pointer;
   .sale {
     text-decoration: none;
     color: #fff;
-    touch-action: none;
     position: absolute;
     margin: 32px 20px 0 7px;
   }
