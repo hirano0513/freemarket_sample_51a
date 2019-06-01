@@ -1,10 +1,5 @@
-.single-inner{
-  @include box-size;
-  border-top: 1px solid #f5f5f5;
-  padding: 40px;
-}
-
 .personal-entry{
+  @include entry-page-body;
   // 会員情報入力画面に使う
   @media screen and (min-width: 769px){
     padding: 0 0 220px;
@@ -28,6 +23,7 @@
       }
     }
     .personal-entry-main{
+      border-top: 1px solid #f5f5f5;
       display: block;
       .entry-container{
         width: 700px;
@@ -42,6 +38,7 @@
         }
       }
       .entry-form{
+        border-top: 1px solid #f5f5f5;
         padding: 40px 16px;
       }
       .person-content{
@@ -52,6 +49,30 @@
         }
         .btn-red{
           margin: 40px 0 0;
+        }
+        li{
+          margin: 40px 0 0;
+          &:first-child{
+            margin: 0;
+          }
+          label{
+            font-weight: 600;
+          }
+          .form-require{
+            background: #ea352d;
+          }
+          .input-default{
+            width: 100%;
+            margin: 8px 0 0;
+          }
+          p{
+            margin: 8px 0 0;
+            line-height: 1.5;
+            &.password-reset-info{
+              font-size: 12px;
+              color: #888;
+            }
+          }
         }
       }
     }
@@ -90,6 +111,7 @@
         }
       }
       .entry-form{
+        border-top: 1px solid #f5f5f5;
         padding: 64px;
       }
       .person-content{
@@ -97,6 +119,30 @@
         margin: 0 auto;
         .btn-red{
           margin: 40px 0 0;
+        }
+        li{
+          margin: 40px 0 0;
+          &:first-child{
+            margin: 0;
+          }
+          label{
+            font-weight: 600;
+          }
+          .form-require{
+            background: #ea352d;
+          }
+          .input-default{
+            width: 100%;
+            margin: 8px 0 0;
+          }
+          p{
+            margin: 8px 0 0;
+            line-height: 1.5;
+            &.password-reset-info{
+              font-size: 12px;
+              color: #888;
+            }
+          }
         }
       }
     }
