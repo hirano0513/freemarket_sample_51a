@@ -8,6 +8,7 @@
 @import "./user-management/registration-page";
 @import "./user-management/entry-page-header";
 @import "./user-management/entry-page-footer";
+@import "./personal-content/identification";
 @import "./config/colors";
 @import "mixins/mixin";
 @import "mixins/vender_prefix";
@@ -18,4 +19,4 @@
 @import "modules/profile_edit";
 @import "modules/sidelist";
 @import "modules/bread-crumbs";
-@import "modules/footer-sell-btn"
+@import "modules/footer-sell-btn";
