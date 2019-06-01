@@ -1,8 +1,5 @@
 .personal-entry
-  %header.personal-entry__header
-    %h1
-      = link_to root_path do
-        = image_tag "logo.svg", alt: "mercari"
+  = render 'layouts/entry-header'
   %main.personal-entry-main
     %section.login-panel
       %h2.login-no-account
