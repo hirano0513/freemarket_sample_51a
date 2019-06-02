@@ -1,15 +1,78 @@
-.top-page
-  = render 'layouts/header'
-  .main-container
-    .main-container__heading ピックアップカテゴリー
-    %section.common-container.clearfix
-      %h3.common-container__title 
-        = link_to 'レディース 新着アイテム','#', class: 'btn'
-        = render partial: 'pickup_category'
-  .main-container
-    .main-container__heading ピックアップブランド
-    %section.common-container.clearfix
-      %h3.common-container__title 
-        = link_to 'Supreme 新着アイテム','#', class: 'btn'
-        = render partial: 'pickup_brand'
-  = render 'layouts/footer'
+= render 'layouts/header'
+
+.credit-card-edit
+  .bread-crumbs
+  .l-container.clearfix
+    .l-content
+      %section.l-chapter-container
+        %h2.l-chapter-container__head クレジットカード情報入力
+        %form#add-card-form.l-single-inner{action: "https://www.mercari.com/jp/mypage/card/add/", method: 'POST', novalidate: 'novalidate' }
+          %input{type: 'hidden', name: '', value: ''}
+          .l-single-content
+            .form-group-first
+              %label{for: ''} カード番号
+              %span.form-group-first__require  必須
+              %input.input-default{type: 'text', placeholder: '半角数字のみ', maxlength: '19'}
+              %ul.form-group-first__singup-card-list
+                %li
+                  = image_tag('//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?2399382397', width: '49', height: '20', alt: '')
+                %li
+                  = image_tag("//www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?2399382397", width: "34", height: "20", alt: "")
+                %li
+                  = image_tag("//www-mercari-jp.akamaized.net/assets/img/card/saison-card.svg?2399382397", width: "30", height: "20", alt: "")
+                %li
+                  = image_tag("//www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?2399382397", width: "32", height: "20", alt: "")
+                %li
+                  = image_tag("//www-mercari-jp.akamaized.net/assets/img/card/american_express.svg?2399382397", width: "21", height: "20", alt: "")
+                %li
+                  = image_tag("//www-mercari-jp.akamaized.net/assets/img/card/dinersclub.svg?2399382397", width: "32", height: "20", alt: "")
+                %li
+                  = image_tag("//www-mercari-jp.akamaized.net/assets/img/card/discover.svg?2399382397", width: "32", height: "20", alt: "")
+            .form-group.signup-form-expire
+              %label{for: ''} 有効期限
+              %span.form-group__require 必須
+              .select-wrap
+                %select.select-default
+                  %option 01
+                  %option 02
+                  %option 03
+                  %option 04
+                  %option 05
+                  %option 06
+                  %option 07
+                  %option 08
+                  %option 09
+                  %option 10
+                  %option 11
+                  %option 12
+                .icon-arrow-bottom
+                  %i.fas.fa-angle-down
+                %span 月
+              .select-wrap
+                %select.select-default
+                  %option 19
+                  %option 20
+                  %option 21
+                  %option 22
+                  %option 23
+                  %option 24
+                  %option 25
+                  %option 26
+                  %option 27
+                  %option 28
+                  %option 29
+                .icon-arrow-bottom
+                  %i.fas.fa-angle-down
+                %span 年
+            .form-group
+              %label{for: ''} セキュリティコード
+              %span.form-group__require 必須
+              %input.input-default{type: 'number', placeholder: 'カード背面4桁もしくは3桁の番号'}
+              .signup-seqcode
+                .signup-seqcode-text 
+                  %span.signup-seqcode-text__question ?
+                  カード裏側の番号とは？
+            %button#submit-button.btn-default.btn-red{type: 'button'} 追加する
+    = render 'render/sidelist'
+
+= render 'layouts/footer'
