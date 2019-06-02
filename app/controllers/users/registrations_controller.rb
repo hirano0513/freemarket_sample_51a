@@ -6,15 +6,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def sms_auth
-    @sms = "sms"
+    @sms = "phone-number"
   end
 
   def address
-    @address = "address"
+    @address = "name"
   end
 
   def payment
-    @payment = "payment"
+    @payment = "5555"
   end
 
   def registered
