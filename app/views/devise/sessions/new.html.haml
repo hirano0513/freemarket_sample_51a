@@ -14,6 +14,8 @@
             Facebookでログイン
         %button#google-login.btn-default.btn-sns.btn-sns__google
           =link_to user_google_oauth2_omniauth_callback_path do
+            %i.icon-google
+              = image_tag "Google_Logo.svg", alt: "Google", width: "26px",height: "26px";
             Googleでログイン
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .login-form-content
