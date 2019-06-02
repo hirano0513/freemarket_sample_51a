@@ -1,5 +1,24 @@
 .personal-entry
-  = render 'layouts/entry-header'
+  .signup-page-header
+    %header.personal-entry__header
+      = render "layouts/entry-header"
+      %nav.progress-bar.signup-bar
+        %ol.clearfix
+          %li.active
+            会員情報
+            .progress-status
+          %li
+            電話番号認証
+            .progress-status
+          %li
+            住所入力
+            .progress-status
+          %li
+            支払い方法
+            .progress-status
+          %li
+            完了
+            .progress-status
   %main.personal-entry-main
     %section.entry-container
       %h2.entry-container__head
@@ -27,5 +46,6 @@
                 %span.form-require 必須
                 = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "6文字以上", class: "input-default"
               %li.actions
-                = f.submit "メルカリを始める", class:"btn-default btn-red"
+                = link_to users_sms_auth_path do
+                  = f.submit "次へ進む", class:"btn-default btn-red"
   = render "layouts/entry-footer"
