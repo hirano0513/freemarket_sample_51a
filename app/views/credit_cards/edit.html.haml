@@ -1,0 +1,26 @@
+= render 'layouts/header'
+
+.credit-card-edit
+  .bread-crumbs
+  .l-container.clearfix
+    .l-content
+      %section.l-chapter-container
+        %h2.l-chapter-container__head 支払い方法
+        .l-single-inner
+          %section
+            .l-single-content
+              %h3.l-single-content__head クレジットカード一覧
+          %section.setting-add-card
+            .l-single-content 
+              = link_to '', class: 'btn-default'  do
+                %i.far.fa-credit-card  クレジットカードを追加する
+          .setting-not-regist
+            = link_to '', target: '_blank'
+            %span 支払い方法について
+            %i.fas.fa-angle-right
+      
+    = render 'render/sidelist'
+
+= render 'layouts/footer'
+
+= render 'render/footer-sell-btn'
