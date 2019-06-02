@@ -1,3 +1,5 @@
+= render 'layouts/header'
+
 .top-page
   .main-container
     .main-container__heading ピックアップカテゴリー
@@ -11,3 +13,5 @@
       %h3.common-container__title 
         = link_to 'Supreme 新着アイテム','#', class: 'btn'
         = render partial: 'pickup_brand'
+
+= render 'layouts/footer'
