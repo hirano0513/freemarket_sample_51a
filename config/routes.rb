@@ -3,7 +3,8 @@ Rails.application.routes.draw do
                  registrations: 'users/registrations', sessions: 'users/sessions'}
 
   devise_scope :user do
-    get 'users/sign_up/index' => 'users/registrations#index'
+    get 'users/sign_up/index', to: 'users/registrations#index'
+    get 'log_out', to: 'users/sessions#log_out'
   end
 
   resources :personals, only: [:show]
