@@ -50,8 +50,11 @@
           &:first-child ::before{
             content: none;
           }
-          &:last-child ::after{
-            content: none;
+          &:last-child{
+            margin-right: 0;
+            & ::after{
+              content: none;
+            }
           }
           &.active {
             font-weight: 600;
@@ -102,8 +105,11 @@
           &:first-child ::before{
             content: none;
           }
-          &:last-child ::after{
-            content: none;
+          &:last-child{
+            margin-right: 0;
+            & ::after{
+              content: none;
+            }
           }
           &.active {
             font-weight: 600;
