@@ -1,0 +1,59 @@
+.personal-show
+  = render "layouts/header"
+  .identification-crambs
+    = render "render/bread-crumbs"
+  %main.personal-show-container.clearfix
+    .identification-content
+      %section.identification-container.mypage-identification
+        %h2.identification-container__head
+          本人情報の登録
+        .identification-inner
+          = form_for @personals do |f|
+            %ul
+              %p お客さまの本人情報をご登録ください。
+              %br
+              登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+              %p.text-right
+                = link_to "本人確認書類のアップロードについて", '#'
+                %i.fas.fa-chevron-right
+              %li
+                = f.label :"お名前"
+                %p みほ三郎
+              %li
+                = f.label :"お名前カナ"
+                %p ミホサブロウ
+              %li
+                = f.label :"生年月日"
+                %p 2019/06/01
+              %li
+                = f.label :"郵便番号"
+                %span.form-require-gray 任意
+                = f.text_field :name,placeholder: "例) 123-4567",class: "input-default"
+              %li
+                = f.label :"都道府県"
+                %span.form-require-gray 任意
+                .prefecture-info
+                  .select-wrap
+                    .input-default
+                      北海道
+                      %i.fas.fa-angle-down
+              %li
+                = f.label :"市区町村"
+                %span.form-require-gray 任意
+                = f.text_field :name,placeholder: "例) 横浜市緑区",class: "input-default"
+              %li
+                = f.label :"番地"
+                %span.form-require-gray 任意
+                = f.text_field :name,placeholder: "例) 青山1-1-1",class: "input-default"
+              %li
+                = f.label :"建物名"
+                %span.form-require-gray 任意
+                = f.text_field :name,placeholder: "例) 柳ビル103",class: "input-default"
+              %li.actions
+                = f.submit "登録する", class:"btn-default btn-red"
+              %li.text-right
+                = link_to "本人情報の登録について", '#'
+                %i.fas.fa-chevron-right
+    = render "render/sidelist"
+  = render "layouts/footer"
+  = render "render/footer-sell-btn"

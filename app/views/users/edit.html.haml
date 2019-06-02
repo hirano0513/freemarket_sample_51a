@@ -1,0 +1,19 @@
+.user_profile_edit
+  .body
+    = render 'render/bread-crumbs'
+    .default-container
+      = render "render/sidelist"
+      .container
+        .content
+          プロフィール
+          .user-profile
+            %img.user-profile__icon
+              =image_tag 'https://static.mercdn.net/images/member_photo_noimage_thumb.png', class: 'usericon'
+            .user-profile__name
+              %input{type: "text", name: "nickname", size: "30"}
+          .user-profile-text
+            %input{type: "textarea", name: "profile", size: "30"}
+          .change-btn
+            .change-btn__text
+              変更する
+      = render 'render/footer-sell-btn'

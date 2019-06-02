@@ -1,0 +1,67 @@
+.user_profile_edit {
+  @media screen and (min-width:300px) {
+    .body {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体' , 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+      font-size: 14px;
+      color:#333;
+      line-height: 1;
+      background-color: #f5f5f5;
+      .default-container {
+        display: flex;
+        margin: 40px auto 0;
+        height: 1292px;
+        width: 1020px;
+        .container { 
+          margin: 0;        
+          .content {
+            width: 700px;
+            height: 415px;
+            margin: 0;
+            background-color: #fff;
+            text-align: center;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 55px;
+            .user-profile {
+              background-image: url("user-background.jpg");
+              position: relative;
+              height: 200px;
+              width: 100%;
+              margin: 0 auto 0;
+              cursor: pointer;
+              display: flex;
+              .usericon {
+                width: 60px;
+                height: 60px;
+                margin: 90px 0 4px 215px;
+                border-radius: 50%;              
+              }
+              &__name {
+                color: #333;
+                font-size: 14px;
+                font-weight: 800;
+                margin: 90px 180px 4px 10px;
+              }
+            }
+            .user-profile-text {
+              margin: 10px;
+            }
+            .change-btn {
+              &__text {
+                background-color: red;
+                color: #fff;
+                font-size: 14px;
+                font-weight: 400;
+                width: 90%;
+                margin: 10px auto 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
