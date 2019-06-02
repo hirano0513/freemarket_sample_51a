@@ -61,15 +61,7 @@
         @include arrow-down;
       }
       select{
-        outline: none;
-        text-indent: 0.01px;
-        vertical-align: middle;
-        color: inherit;
-        -webkit-appearance: button;
-        -moz-appearance: button;
-      }
-      i{
-        @include arrow-down;
+        @include select-box;
       }
     }
   }
