@@ -1,0 +1,13 @@
+.user-log_out
+  = render "layouts/header"
+  .identification-crambs
+    = render "render/bread-crumbs"
+  %main.log_out-container.clearfix
+    .log_out-content
+      .log_out-inner
+        .button-area
+          .log-out-btn
+            = link_to "ログアウト", destroy_user_session_path,method: :delete,class:"btn-default btn-red"
+    = render "render/sidelist"
+  = render "layouts/footer"
+  = render "render/footer-sell-btn"
