@@ -1,0 +1,73 @@
+.single-inner.entry-form
+  .payment-method
+    = form_for @payment do |f|
+      %ul.card-list
+        .form-field
+          = f.label :"カード番号"
+          %span.form-require 必須
+          = f.text_field :'5555',placeholder: "半角数字のみ",class: "input-default"
+          %ul.card-list
+            %li
+              =image_tag "credit-cards/visa.svg", width: "49px",height: "20px";
+            %li
+              =image_tag "credit-cards/Mastercard.svg", width: "34px",height: "20px";
+            %li
+              =image_tag "credit-cards/Saison_card.svg", width: "30px",height: "20px";
+            %li
+              =image_tag "credit-cards/JCB.svg", width: "32px",height: "20px";
+            %li
+              =image_tag "credit-cards/American_Express.svg", width: "21px",height: "20px";
+            %li
+              =image_tag "credit-cards/Diners_Club.svg", width: "32px",height: "20px";
+            %li
+              =image_tag "credit-cards/discover.svg", width: "32px",height: "20px";
+        .form-field
+          = f.label :"有効期限"
+          %span.form-require 必須
+          .expiration-date
+            .select-wrap
+              %select.select-default
+                %option 01
+                %option 02
+                %option 03
+                %option 04
+                %option 05
+                %option 06
+                %option 07
+                %option 08
+                %option 09
+                %option 10
+                %option 11
+                %option 12
+              %i.fas.fa-angle-down
+            %span 月
+          .expiration-date
+            .select-wrap
+              %select.select-default
+                %option 19
+                %option 20
+                %option 21
+                %option 22
+                %option 23
+                %option 24
+                %option 25
+                %option 26
+                %option 27
+                %option 28
+                %option 29
+              %i.fas.fa-angle-down
+            %span 年
+          %input{name: "birthday", type: "hidden", value: ""}/
+          .clearfix
+        .form-field
+          = f.label :"セキュリティコード"
+          %span.form-require 必須
+          = f.text_field :payment,placeholder: "カード背面4桁もしくは3桁の番号",class: "input-default"
+        .text-right
+          .text-right--attention
+            = link_to root_path do
+              .form-question ?
+              カード裏面の番号とは?
+        .form-field
+          = link_to users_registered_path do
+            = f.submit "次へ進む", class:"btn-default btn-red"
