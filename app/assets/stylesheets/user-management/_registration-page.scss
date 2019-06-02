@@ -54,13 +54,26 @@
                 @include arrow-down;
               }
             }
+            &.text-right{
+              text-align: right;
+            }
+            .entry-notes{
+              font-size: 16px;
+              font-weight: bold;
+              p{
+                line-height: 1.5;
+              }
+              &__text{
+                margin: 8px 0 0;
+                padding: 0;
+                &.text-center{
+                  text-align: center;
+                }
+              }
+            }
             p{
               margin: 8px 0 0;
               line-height: 1.5;
-              &.password-reset-info{
-                font-size: 12px;
-                color: #888;
-              }
             }
             a {
               @include info-text;
@@ -70,6 +83,10 @@
               p {
                 font-size: 18px;
               }
+            }
+            select{
+              width: 100%;
+              @include select-box;
             }
           }
         }
@@ -124,13 +141,26 @@
                 @include arrow-down;
               }
             }
+            &.text-right{
+              text-align: right;
+            }
+            .entry-notes{
+              font-size: 14px;
+              font-weight: bold;
+              p{
+                line-height: 1.5;
+              }
+              &__text{
+                margin: 8px 0 0;
+                padding: 0;
+                &.text-center{
+                  text-align: center;
+                }
+              }
+            }
             p{
               margin: 8px 0 0;
               line-height: 1.5;
-              &.password-reset-info{
-                font-size: 12px;
-                color: #888;
-              }
             }
             a {
               @include info-text;
@@ -139,6 +169,13 @@
               text-align: center;
               p {
                 font-size: 18px;
+              }
+            }
+            select{
+              width: 100%;
+              @include select-box;
+              .fas.fa-angle-down{
+                @include arrow-down;
               }
             }
           }
