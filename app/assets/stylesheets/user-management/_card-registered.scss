@@ -1,0 +1,76 @@
+.payment-method{
+  max-width: 320px;
+  margin: 0 auto;
+  ul {
+    &.card-list{
+      margin: 8px 0 0;
+    }
+    li:first-child {
+      margin: 0;
+    }
+    li {
+      display: inline-block;
+      margin: 0 0 0 8px;
+      vertical-align: middle;
+    }
+  }
+  .form-field {
+    margin: 40px 0 0;
+  }
+  label{
+    font-weight: 600;
+  }
+  .form-require{
+    background: #ea352d;
+  }
+  .input-default{
+    width: 100%;
+    margin: 8px 0 0;
+  }
+  a {
+    @include info-text;
+  }
+  p{
+    margin: 8px 0 0;
+    line-height: 1.5;
+  }
+  .text-right {
+    text-align: right;
+    &--attention{
+      position: relative;
+      margin: 8px 0 0;
+    }
+  }
+  .expiration-date{
+    .select-wrap{
+      display: inline-block;
+      width: 35%;
+      margin: 8px 0 0;
+      position: relative;
+      background: #fff;
+      select {
+        width: 100%;
+        .select-default{
+          padding: 0 16px;
+        }
+      }
+      span{
+        margin: 0 8px;
+      }
+      .fas.fa-angle-down{
+        @include arrow-down;
+      }
+      select{
+        outline: none;
+        text-indent: 0.01px;
+        vertical-align: middle;
+        color: inherit;
+        -webkit-appearance: button;
+        -moz-appearance: button;
+      }
+      i{
+        @include arrow-down;
+      }
+    }
+  }
+}
