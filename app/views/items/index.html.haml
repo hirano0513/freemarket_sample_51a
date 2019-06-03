@@ -1,5 +1,6 @@
+= render 'layouts/header'
+
 .top-page
-  = render 'layouts/header'
   .main-container
     .main-container__heading ピックアップカテゴリー
     %section.common-container.clearfix
@@ -12,4 +13,5 @@
       %h3.common-container__title 
         = link_to 'Supreme 新着アイテム','#', class: 'btn'
         = render partial: 'pickup_brand'
-  = render 'layouts/footer'
+
+= render 'layouts/footer'

@@ -20,7 +20,7 @@
                 Facebookで登録
             %button#google-login.btn-default.btn-sns.btn-sns__google
               = link_to user_google_oauth2_omniauth_authorize_path do
+                %i.icon-google
+                  = image_tag "Google_Logo.svg", alt: "Google", width: "26px",height: "26px";
                 Googleで登録
-            = link_to "ログイン", new_user_session_path
-            = link_to "ログアウト", destroy_user_session_path,method: :delete
     = render 'layouts/entry-footer'
