@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   devise_scope :user do
     get 'users/sign_up/index', to: 'users/registrations#index'
     get 'log_out', to: 'users/sessions#log_out'
+    get 'users/sms_auth', to: 'users/registrations#sms_auth'
+    get 'users/address', to: 'users/registrations#address'
+    get 'users/payment', to: 'users/registrations#payment'
+    get 'users/registered', to: 'users/registrations#registered'
   end
 
   resources :personals, only: [:show]

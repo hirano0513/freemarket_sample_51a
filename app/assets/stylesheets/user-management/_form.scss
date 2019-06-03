@@ -62,3 +62,59 @@
   font-size: 12px;
   text-align: center;
 }
+
+.personal-birthday{
+  .select-wrap{
+    display: inline-block;
+    width: calc(30% - 17px);
+    position: relative;
+    &:first-of-type{
+      width: 76px;
+      position: relative
+    }
+    .select-default{
+      padding: 0 10px;
+    }
+    span{
+      margin: 0 2px;
+    }
+    .fas.fa-angle-down{
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      z-index: 2;
+      color: #888;
+      font-size: 18px;
+      -webkit-transform: translate(0, -50%);
+      transform: translate(0, -50%);
+    }
+  }
+}
+
+.expiration-date{
+  .select-wrap{
+    display: inline-block;
+    width: calc(30% - 17px);
+    position: relative;
+    &:first-of-type{
+      width: 76px;
+      position: relative
+    }
+    .select-default{
+      padding: 0 10px;
+    }
+    span{
+      margin: 0 2px;
+    }
+    .fas.fa-angle-down{
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      z-index: 2;
+      color: #888;
+      font-size: 18px;
+      -webkit-transform: translate(0, -50%);
+      transform: translate(0, -50%);
+    }
+  }
+}
