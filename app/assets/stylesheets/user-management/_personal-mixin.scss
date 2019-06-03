@@ -4,7 +4,7 @@
   top: 50%;
   z-index: 2;
   color: #888;
-  font-size: 18px;
+  font-size: 24px;
   -webkit-transform: translate(0, -50%);
   transform: translate(0, -50%);
 }
@@ -36,4 +36,13 @@
 @mixin info-text {
   color: #0099e8;
   text-decoration: none;
+}
+
+@mixin select-box{
+  outline: none;
+  text-indent: 0.01px;
+  vertical-align: middle;
+  color: inherit;
+  -webkit-appearance: button;
+  -moz-appearance: button;
 }

@@ -1,0 +1,428 @@
+.sellpage {
+  @include entry-page-body;
+  background-color: #f5f5f5;
+  @media screen and (min-width: 768px){
+    padding: 0 0 220px;
+  }
+  padding: 0 0 250px;
+    .sell-main {
+      .sell-wrapper {
+        background: #fff;
+        @media screen and (min-width: 768px){
+          width: 700px;
+          margin: 0 auto;
+        }
+        .sell-container {
+          &__inner {
+            h2 {
+              display: block;
+              margin-block-start: 0.83em;
+              margin-block-end: 0.83em;
+              margin-inline-start: 0px;
+              margin-inline-end: 0px;
+              font-weight: bold;
+            }
+            .sell-container__head {
+              padding: 24px 8px;
+              font-size: 18px;
+              line-height: 1.5;
+              text-align: center;
+              margin: 0;
+              @media screen and (min-width: 768px) {
+                padding: 32px 16px;
+                font-size: 22px;
+              }
+            }
+            .sell-form {
+              border-top: 1px solid #eee;
+              .upload-wrapper {
+                padding: 40px 2.5%;
+                @media screen and (min-width: 768px) {
+                  width: 620px;
+                  padding: 40px;
+                }
+                &__head {
+                  font-size: 16px;
+                  font-weight: bold;
+                  +p {
+                    margin: 8px 0 0;
+                    line-height: 1.5;
+                    font-size: 14px;
+                  }
+                }
+                .upload-dropbox__area {
+                  display: inline;
+                  margin: 16px auto 0;
+                  @media screen and (min-width: 768px) {
+                    display: block;
+                    width: 620px;
+                  }
+                  .upload-container {
+                    display: inline;
+                    .uploads {
+                      @media screen and (min-width: 768px) {
+                        float: left;
+                        display: block;
+                      }
+                      // 画像枚数によって数字を変える必要あり。jsで使用？
+                      // -webkit-box-flex: 1;
+                      // -ms-flex: 1;
+                      // flex: 1;
+                      display: inline;
+                      ul {
+                        @media screen and (min-width: 768px) {
+                          display: block;
+                        }
+                        display: inline;
+                        width: 100%;
+                        .upload-box {
+                          @media screen and (min-width: 768px) {
+                            width: 116px;
+                            margin: 0 0 10px 10px;
+                          }
+                          margin-left: 0;
+                          position: relative;
+                          display: inline-block;
+                          width: 18%;
+                          margin: 0 0 2% 2%;
+                          border: 1px solid #eee;
+                          vertical-align: top;
+                          .upload-figure.landscape {
+                            @media screen and (min-width: 768px) {
+                              line-height: 116px;
+                            }
+                          }
+                          .upload-figure {
+                            @media screen and (min-width: 768px) {
+                              width: auto;
+                              height: auto;
+                              padding: 0;
+                              height: 116px;
+                            }
+                            position: relative;
+                            overflow: hidden;
+                            width: 100%;
+                            height: 0;
+                            padding: 0 0 100%;
+                            background: #f5f5f5;
+                            img {
+                              position: static;
+                              -webkit-transform: none;
+                              transform: none;
+                              position: absolute;
+                              top: 50%;
+                              left: 0;
+                              -webkit-transform: translate(0, -50%);
+                              transform: translate(0, -50%);
+                              width: 100%;
+                              cursor: default;
+                            }
+                          }
+                          .upload-btn {
+                            display: flex;
+                            font-size: 14px;
+                            a {
+                              width: 50%;
+                              background: #f5f5f5;
+                              line-height: 44px;
+                              text-align: center;
+                              color: #0099e8;
+                              text-decoration: none;
+                            }
+                            a:last-child {
+                              border-left: 1px solid #eee;
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                  .upload-dropbox.have-item-0 {
+                    width: 100%;
+                    margin-left: 0;
+                    margin-bottom: 40px;
+                  }
+                  .upload-dropbox {
+                    @media screen and (min-width: 768px) {
+                      float: right;
+                      width: 620px;
+                    }
+                    position: relative;
+                    min-height: 162px;
+                    background: #f5f5f5;
+                    border: 1px dashed #ccc;
+                    font-size: 0;
+                    text-align: center;
+                    -webkit-transition: -webkit-box-shadow ease-out .3s;
+                    transition: -webkit-box-shadow ease-out .3s;
+                    transition: box-shadow ease-out .3s;
+                    transition: box-shadow ease-out .3s, -webkit-box-shadow ease-out .3s;
+                    cursor: pointer;
+                    float: right;
+                    margin-left: 2%;
+                    input {
+                      border: 0;
+                      outline: 0;
+                      font-family: inherit;
+                      -webkit-appearance: none;
+                      -moz-appearance: none;
+                    }
+                  }
+                  pre {
+                    @media screen and (min-width: 768px) {
+                      position: absolute;
+                      top: 50%;
+                      left: 16px;
+                      right: 16px;
+                      text-align: center;
+                      font-size: 14px;
+                      line-height: 1.5;
+                      -webkit-transform: translate(0, -50%);
+                      transform: translate(0, -50%);
+                      pointer-events: none;
+                      white-space: pre-wrap;
+                      word-wrap: break-word;
+                      overflow: auto;
+                    }
+                  }
+                  .visible-pc {
+                    @media screen and (min-width: 768px) {
+                      display: block;
+                    }
+                    display: none;
+                  }
+                  .icon-camera {
+                    @media screen and (min-width: 768px) {
+                      display: none;
+                    }
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    -webkit-transform: translate(-50%, -50%);
+                    transform: translate(-50%, -50%);
+                    font-size: 14px;
+                  }
+                }
+              }
+
+            }
+            .form-group {
+              font-size: 14px;
+              font-weight: 600;
+              .input-default {
+                width: 100%;
+                margin: 8px 0 0;
+              }
+              .textarea-default {
+                margin-top: 8px;
+              }
+            }
+            .sell-sub-head {
+              @media screen and (min-width: 768px) {
+                float: left;
+              }
+              color: #888;
+              font-size: 14px;
+            }
+            .sell-btn-box {
+              .btn-red {
+                margin: 40px 0 0;
+              }
+              .btn-gray {
+                text-decoration: none;
+                width: 45%;
+                margin: 24px auto 0;
+                background: #aaa;
+                border: 1px solid #aaa;
+                color: #fff;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .sell-form-box {
+      @media screen and (min-width: 768px) {
+        float: right;
+        width: 400px;
+        margin: 0;
+      }
+      margin: 40px 0 0;
+      .form-group {
+        select {
+          width: 100%;
+        }
+        .select-warp {
+          position: relative;
+          margin: 8px 0 0;
+          .fa-angle-down {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            z-index: 2;
+            color: #888;
+            font-size: 20px;
+            -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+          }
+        }
+      }
+      .form-group:first-child {
+        margin: 0;
+      }
+      .sell-price{
+        overflow: auto;
+        .form-group {
+          .price-box {
+            overflow: auto;
+          }
+          .l-left {
+            width: 50%;
+            line-height: 48px;
+            float: left;
+          }
+          .l-right {
+            width: 50%;
+            float: right;
+            font-size: 12px;
+            font-weight: 100;
+          }
+          .sell-price-input {
+            text-align: right;
+            .input-default {
+              margin: 0;
+              text-align: right;
+            }
+          }
+          .sell-price-input>div {
+            display: inline-block;
+            width: 80%;
+            margin: 0 0 0 5%;
+          }
+        }
+      }
+      .sell-price>li:first-child {
+        padding: 0 0 24px;
+        border: 0;
+      }
+      .sell-price>li {
+        padding: 24px 0;
+        border-top: 1px solid #ccc;
+        .l-left {
+          float: left;
+        }
+        .l-right {
+          float: right;
+        }
+      }
+    }
+
+
+
+    .form-require {
+      background: #ea352d;
+      margin: 0 0 0 5px;
+      padding: 4px 4px;
+      border-radius: 2px;
+      color: #fff;
+      font-size: 12px;
+      font-weight: bold;
+      vertical-align: top;
+    }
+
+    .sell-content {
+      overflow: auto;
+      padding: 40px;
+      border-top: 1px solid #eee;
+      clear: both;
+    }
+
+    .form-group:first-child {
+      margin: 0;
+    }
+
+    .form-group {
+      margin: 40px 0 0;
+    }
+
+    .input-default {
+      height: 48px;
+      padding: 10px 16px 8px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      background: #fff;
+      line-height: 1.5;
+      font-size: 16px;
+    }
+
+    .textarea-default {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      min-height: 104px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      background: #fff;
+      font-size: 16px;
+      line-height: 1.5;
+      box-sizing: border-box;
+    }
+
+    .select-wrap {
+      position: relative;
+      background: #fff;
+    }
+
+    .select-default {
+      position: relative;
+      z-index: 2;
+      height: 48px;
+      padding: 0 16px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      background: 0;
+      font-size: 16px;
+      line-height: 1.5;
+      cursor: pointer;
+      -webkit-appearance: none;
+    }
+
+    .form-question{
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #0099e8;
+      color: #fff;
+      line-height: 14px;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .clearfix:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    .sell-btn-box p {
+      line-height: 1.5;
+      font-size: 14px;
+    }
+
+    .commission {
+      font-size: 14px;
+      color: #333333;
+    }
+
+    .caution {
+      color: #0099e8;
+      text-decoration: none;
+    }
+
+    .profit {
+      font-weight: bold;
+      font-size: 16px;
+    }
+  }

@@ -5,6 +5,22 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def index
   end
 
+  def sms_auth
+    @sms = "phone-number"
+  end
+
+  def address
+    @address = "name"
+  end
+
+  def payment
+    @payment = "5555"
+  end
+
+  def registered
+    @registered = "registered"
+  end
+
   def create
     if session["devise.sns_id"] != nil #sns登録なら
       params[:user][:password] = "Devise.friendly_token.first(6)" #deviseのパスワード自動生成機能を使用
