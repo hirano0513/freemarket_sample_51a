@@ -1,5 +1,7 @@
 .personal-entry
-  = render 'layouts/entry-header'
+  .signup-page-header
+    %header.personal-entry__header
+      = render 'layouts/entry-header'
   %main.personal-entry-main
     %section.login-panel
       %h2.login-no-account
@@ -26,6 +28,7 @@
               = f.password_field :password, autocomplete: "current-password", placeholder: "パスワード", class: "input-default"
             %li.actions
               = f.submit "ログイン", class:"btn-default btn-red"
-            = link_to new_user_password_path do
-              パスワードをお忘れの方
+            %li
+              = link_to new_user_password_path do
+                パスワードをお忘れの方
   = render "layouts/entry-footer"
