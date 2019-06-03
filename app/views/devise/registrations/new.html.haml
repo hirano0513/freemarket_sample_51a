@@ -1,5 +1,24 @@
 .personal-entry
-  = render 'layouts/entry-header'
+  .signup-page-header
+    %header.personal-entry__header
+      = render "layouts/entry-header"
+      %nav.progress-bar.signup-bar
+        %ol.clearfix
+          %li.active
+            会員情報
+            .progress-status
+          %li
+            電話番号認証
+            .progress-status
+          %li
+            お届け先住所入力
+            .progress-status
+          %li
+            支払い方法
+            .progress-status
+          %li
+            完了
+            .progress-status
   %main.personal-entry-main
     %section.entry-container
       %h2.entry-container__head
@@ -26,6 +45,61 @@
                 = f.label :password_confirmation, "パスワード(確認)"
                 %span.form-require 必須
                 = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "6文字以上", class: "input-default"
+              %li
+                %h3.entry-notes 本人確認
+                %p.entry-notes__text
+                安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+              %li
+                = f.label :nickname, "姓(全角)"
+                %span.form-require 必須
+                = f.text_field :nickname, autofocus: true, autocomplete: "nickname", placeholder: "例) 山田", class: "input-default"
+              %li
+                = f.label :nickname, "姓(半角)"
+                %span.form-require 必須
+                = f.text_field :nickname, autofocus: true, autocomplete: "nickname", placeholder: "例) 彩", class: "input-default"
+              %li
+                = f.label :nickname, "姓カナ(全角)"
+                %span.form-require 必須
+                = f.text_field :nickname, autofocus: true, autocomplete: "nickname", placeholder: "例) ヤマダ", class: "input-default"
+              %li
+                = f.label :nickname, "姓カナ(半角)"
+                %span.form-require 必須
+                = f.text_field :nickname, autofocus: true, autocomplete: "nickname", placeholder: "例) アヤ", class: "input-default"
+              %li
+                = f.label :nickname, "生年月日"
+                %span.form-require 必須
+                .personal-birthday
+                  .select-wrap
+                    %select.select-default
+                      %option --
+                    %i.fas.fa-angle-down
+                  %span 年
+                  .select-wrap.select-wrap__month
+                    %select.select-default
+                      %option --
+                    %i.fas.fa-angle-down
+                  %span 月
+                  .select-wrap.select-wrap__day
+                    %select.select-default
+                      %option --
+                    %i.fas.fa-angle-down
+                  %span 日
+                %input{name: "birthday", type: "hidden", value: ""}/
+                .clearfix
+                %p.form-info-text
+                  ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+              %li
+                %p.entry-notes__text.text-center
+                  「次へ進む」のボタンを押すことにより、
+                  = link_to root_path do
+                    利用規約
+                  に同意したものとみなします
               %li.actions
-                = f.submit "メルカリを始める", class:"btn-default btn-red"
+                = link_to users_sms_auth_path do
+                  = f.submit "次へ進む", class:"btn-default btn-red"
+              %li.text-right
+                %p
+                  =link_to root_path do
+                    本人情報の登録について
+                    %i.fas.fa-chevron-right
   = render "layouts/entry-footer"

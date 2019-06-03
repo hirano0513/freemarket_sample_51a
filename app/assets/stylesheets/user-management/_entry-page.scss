@@ -2,6 +2,7 @@
   @include entry-page-body;
   // 新規会員登録画面に使う
   @media screen and (min-width: 769px){
+    padding: 0 0 220px;
     .new-registration {
       &__header {
         height: 128px;
@@ -24,7 +25,6 @@
       }
     }
     .registration-menu{
-      padding: 0 0 220px;
       .registration-title{
         width: 700px;
         margin: 0 auto;
@@ -54,12 +54,16 @@
             padding: 4px 6px;
             background: #eee;
           }
+          .icon-google{
+            margin: 2px 0 0 0;
+          }
         }
       }
     }
   }
 
   @media screen and (max-width: 768px){
+    padding: 0 0 250px;
     .new-registration {
       &__header {
         text-align: center;
@@ -81,7 +85,6 @@
       }
     }
     .registration-menu{
-      padding: 0 0 250px;
       .registration-title{
         background: #fff;
         &__head {
@@ -109,6 +112,9 @@
         span {
           padding: 4px 6px;
           background: #eee;
+        }
+        .icon-google{
+          margin: 2px 0 0 0;
         }
       }
     }

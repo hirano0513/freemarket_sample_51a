@@ -1,5 +1,7 @@
 .personal-entry
-  = render 'layouts/entry-header'
+  .signup-page-header
+    %header.personal-entry__header
+      = render 'layouts/entry-header'
   %main.personal-entry-main
     %section.login-panel
       %h2.login-no-account
@@ -14,6 +16,8 @@
             Facebookでログイン
         %button#google-login.btn-default.btn-sns.btn-sns__google
           =link_to user_google_oauth2_omniauth_callback_path do
+            %i.icon-google
+              = image_tag "Google_Logo.svg", alt: "Google", width: "26px",height: "26px";
             Googleでログイン
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .login-form-content
@@ -24,6 +28,7 @@
               = f.password_field :password, autocomplete: "current-password", placeholder: "パスワード", class: "input-default"
             %li.actions
               = f.submit "ログイン", class:"btn-default btn-red"
-            = link_to new_user_password_path do
-              パスワードをお忘れの方
+            %li
+              = link_to new_user_password_path do
+                パスワードをお忘れの方
   = render "layouts/entry-footer"

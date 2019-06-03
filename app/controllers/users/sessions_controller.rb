@@ -13,10 +13,16 @@ class Users::SessionsController < Devise::SessionsController
   #   super
   # end
 
+  def log_out
+    @current_user = "3"
+  end
+
   # DELETE /resource/sign_out
-  # def destroy
-  #   super
-  # end
+  def destroy
+    session.delete(:user_id)
+    @current_user = nil
+    redirect_to root_url
+  end
 
   # protected
 
