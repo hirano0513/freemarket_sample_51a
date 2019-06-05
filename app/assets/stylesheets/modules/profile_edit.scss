@@ -18,7 +18,6 @@
           margin: 0;        
           .content {
             width: 700px;
-            height: 415px;
             margin: 0;
             background-color: #fff;
             text-align: center;
@@ -47,17 +46,15 @@
               }
             }
             .user-profile-text {
-              margin: 10px;
-            }
-            .change-btn {
-              &__text {
-                background-color: red;
-                color: #fff;
-                font-size: 14px;
-                font-weight: 400;
-                width: 90%;
-                margin: 10px auto 0;
+              padding: 40px 16px;
+              .textarea-default{
+                min-height: 216px;
+                width: calc(100% - 22px);
+                overflow: scroll;
               }
+            }
+            .btn-default {
+              margin: 16px 0 0;
             }
           }
         }
