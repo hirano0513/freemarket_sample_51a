@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     get 'users/registered', to: 'users/registrations#registered'
   end
 
-  resources :credit_cards, only: [:create, :edit]
+  resources :credit_cards, only: [:new, :create, :edit]
 
   resources :users, only: [:show, :edit, :update] do
     resources :personals, only: [:show]
