@@ -1,5 +1,6 @@
 .user_profile_edit
   .body
+    = render "layouts/header"
     = render 'render/bread-crumbs'
     .default-container
       = render "render/sidelist"
@@ -10,11 +11,11 @@
             %img.user-profile__icon
               =image_tag 'https://static.mercdn.net/images/member_photo_noimage_thumb.png', class: 'usericon'
             .user-profile__name
-              %input{type: "text", name: "nickname", size: "30"}
+              %input{type: "text", name: "nickname", class: "input-default", value: "#{current_user.nickname}"}
           .user-profile-text
-            %input{type: "textarea", name: "profile", size: "30"}
+            %textarea{type: "textarea", name: "profile", class: "textarea-default",placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪"}
           .change-btn
             .change-btn__text
               変更する
-      = render 'render/footer-sell-btn'
-      
+  = render "layouts/footer"
+  = render 'render/footer-sell-btn'
