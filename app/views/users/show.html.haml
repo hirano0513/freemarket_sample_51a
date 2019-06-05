@@ -3,6 +3,7 @@
     %link{href: "https://use.fontawesome.com/releases/v5.6.1/css/all.css", rel: "stylesheet"}
     %meta{content: "width=device-width,initial-scale=1.0,minimum-scale=1.0", name: "viewport"}/
   .body
+    = render "layouts/header"
     = render 'render/bread-crumbs'
     .default-container
 
@@ -73,5 +74,5 @@
                     =link_to '過去の取引', '#', class: 'past-trade'
                 .mypage-tab__tradetab--list
                   取引中の商品がありません  
-
-        = render 'render/footer-sell-btn'
+  = render "layouts/footer"
+  = render 'render/footer-sell-btn'
