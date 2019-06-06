@@ -43,5 +43,8 @@ class User < ApplicationRecord
         )
       end
     end
+    # hashでsnsのidを返り値として保持しておく
+    # omniauth_callbacks_controller.rbの条件分岐に使用する。
+    return { user: user , sns_id: sns.id }
   end
 end
