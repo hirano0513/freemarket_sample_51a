@@ -79,10 +79,9 @@ gem "omniauth-facebook"
 gem "omniauth-twitter"
 gem "omniauth-google-oauth2"
 gem 'haml-rails'
-gem 'erb2haml'
 gem "mini_magick"
 gem 'font-awesome-rails'
 gem 'pry-rails'
 gem 'erb2haml'
 gem 'dotenv-rails'
-
+gem 'active_hash'
