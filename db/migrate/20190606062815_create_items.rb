@@ -8,7 +8,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.integer :sales_status, null: false, default: 0
       t.integer :like
       t.integer :seller_id, null: false,foreign_key: true
-      t.integer :buyer_id, null: false,foreign_key: true
+      t.integer :buyer_id, foreign_key: true
       t.integer :brand_id, foreign_key: true
       t.timestamps
     end
