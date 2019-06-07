@@ -5,11 +5,13 @@ class Item < ApplicationRecord
   has_many :images
   has_many :items_categories
   has_many :categories, through: :items_categories
+  has_one :shipment
   belongs_to :user
-  belongs_to :shipment
   belongs_to :brand
   belongs_to :seller, class_name: "User"
   belongs_to :buyer, class_name: "User"
+  accepts_nested_attributes_for :shipment
+  accepts_nested_attributes_for :brand
 
   enum size: {"--": 0, "XXS以下": 1, "XS(SS)": 2, "S": 3, "M": 4,"L": 5,"XL(LL)": 6, "2XL(3L)": 7, "3XL(4L)": 8, "4XL(5L)以上": 9,"FREESIZE": 10}, _suffix: true
 
