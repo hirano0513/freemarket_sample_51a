@@ -6,12 +6,14 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @shipment = Shipment.new
+    @brand = Brand.new
   end
 
   def create
     @item = Item.create(item_params)
     @shipment = Shipment.create(shipment_params)
     redirect_to root_path
+    @brand = Brand.create(brand_params)
 
   end
 
@@ -22,6 +24,10 @@ class ItemsController < ApplicationController
 
   def shipment_params
     params.require(:shipment).permit(:cost_payer, :method, :days, :prefecture_id)
+  end
+
+  def brand_params
+    params.require(:brand).permit(:name)
   end
 
 end
