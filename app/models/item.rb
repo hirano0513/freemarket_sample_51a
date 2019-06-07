@@ -1,6 +1,7 @@
 class Item < ApplicationRecord
   validates :name, length: {maximum: 40}
-  validates :price, numericality: { only_integer: true,greater_than: 300, less_than: 9999999}
+  validates :description, length: {maximum: 1000}
+  validates :price, numericality: {only_integer: true,greater_than: 300, less_than: 9999999}
   
   has_many :images
   has_many :items_categories
