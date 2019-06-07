@@ -6,42 +6,42 @@
     %section.sell-wrapper
       .sell-container
         .sell-container__inner
-          %h2.sell-container__head 商品の情報を入力
-          %form.sell-form
-            .upload-wrapper
-              %h3.upload-wrapper__head
-                出品画像
-                %span.form-require 必須
-              %p 最大10枚までアップロードできます
-              .upload-dropbox__area
-                .upload-container
-                  .uploads
-                    %ul
-                      -# 画像アップロード時のstyleです。jsで使用？
-                      -# %li.upload-box
-                      -#   %figure.upload-figure.landscape
-                      -#     %img=image_tag 'mercari_profile.png'
-                      -#   .upload-btn
-                      -#     =link_to '編集', '#', class: 'upload-edit'
-                      -#     =link_to '削除', '#'
-                .upload-dropbox.have-item-0
-                  %input.upload-dropbox__file{multiple: "", name: "image", style: "display: none;", type: "file"}
-                  %pre.visible-pc
-                    :preserve
-                      ドラッグアンドドロップ
-                      またはクリックしてファイルをアップロード
-                  %i.fas.fa-camera.icon-camera
-            .sell-content
-              .form-group
-                %label 商品名
-                %span.form-require 必須
-                %div
-                  %input.input-default{placeholder: "商品名（必須 40文字まで)", value: ""}/
-              .form-group
-                %label 商品の説明
-                %span.form-require 必須
-                %textarea.textarea-default{placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5"}
-            = form_for @item do |f|
+          = form_for @item do |f|
+            %h2.sell-container__head 商品の情報を入力
+            .sell-form
+              .upload-wrapper
+                %h3.upload-wrapper__head
+                  出品画像
+                  %span.form-require 必須
+                %p 最大10枚までアップロードできます
+                .upload-dropbox__area
+                  .upload-container
+                    .uploads
+                      %ul
+                        -# 画像アップロード時のstyleです。jsで使用？
+                        -# %li.upload-box
+                        -#   %figure.upload-figure.landscape
+                        -#     %img=image_tag 'mercari_profile.png'
+                        -#   .upload-btn
+                        -#     =link_to '編集', '#', class: 'upload-edit'
+                        -#     =link_to '削除', '#'
+                  .upload-dropbox.have-item-0
+                    %input.upload-dropbox__file{multiple: "", name: "image", style: "display: none;", type: "file"}
+                    %pre.visible-pc
+                      :preserve
+                        ドラッグアンドドロップ
+                        またはクリックしてファイルをアップロード
+                    %i.fas.fa-camera.icon-camera
+              .sell-content
+                .form-group
+                  %label 商品名
+                  %span.form-require 必須
+                  %div
+                    = f.text_field :name, placeholder: "商品名（必須 40文字まで)", value: "", class: "input-default"
+                .form-group
+                  %label 商品の説明
+                  %span.form-require 必須
+                  %textarea.textarea-default{placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5"}
               .sell-content
                 %h3.sell-sub-head 商品の詳細
                 .sell-form-box
@@ -69,10 +69,11 @@
                         = f.select :size, Item.sizes.keys.to_a, {}, class: "select-default"
                         %i.fas.fa-angle-down
                   .form-group.brand--container
-                    %label ブランド
-                    %span.form-require-gray 任意
-                    %div
-                      %input.input-default{placeholder: "例）シャネル", value: ""}/
+                    = f.fields_for :brand do |brand|
+                      = brand.label "ブランド"
+                      %span.form-require-gray 任意
+                      %div
+                        = brand.text_field :name, placeholder: "例）シャネル", value: "",class: "input-default"
                   .form-group
                     %label 商品の状態
                     %span.form-require 必須
@@ -80,8 +81,8 @@
                       .select-warp
                         = f.select :item_status, Item.item_statuses.keys.to_a, {}, class: "select-default"
                         %i.fas.fa-angle-down
-              = form_for @shipment,url: {action: :create} do |f|
-                .sell-content
+              .sell-content
+                = f.fields_for :shipment do |shipment|
                   %h3.sell-sub-head 配送について
                   = link_to root_path do
                     .form-question ?
@@ -91,28 +92,28 @@
                       %span.form-require 必須
                       %div
                         .select-warp
-                          = f.select :cost_payer, Shipment.cost_payers.keys.to_a, {}, class: "select-default"
+                          = shipment.select :cost_payer, Shipment.cost_payers.keys.to_a, {}, class: "select-default"
                           %i.fas.fa-angle-down
                     .form-group
                       %label 配送の方法
                       %span.form-require 必須
                       %div
                         .select-warp
-                          = f.select :method, Shipment.methods.keys.to_a, {}, class: "select-default"
+                          = shipment.select :method, Shipment.methods.keys.to_a, {}, class: "select-default"
                           %i.fas.fa-angle-down
                     .form-group
                       %label 発送元の地域
                       %span.form-require 必須
                       %div
                         .select-warp
-                          = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "--"}, {class: "select-default"}
+                          = shipment.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "--"}, {class: "select-default"}
                           %i.fas.fa-angle-down
                     .form-group
                       %label 発送までの日数
                       %span.form-require 必須
                       %div
                         .select-warp
-                          = f.select :days, Shipment.days.keys.to_a, {}, class: "select-default"
+                          = shipment.select :days, Shipment.days.keys.to_a, {}, class: "select-default"
                           %i.fas.fa-angle-down
             .sell-content
               %h3.sell-sub-head 販売価格(300〜9,999,999)
@@ -128,7 +129,7 @@
                       .l-right.sell-price-input
                         ¥
                         %div
-                          %input.input-default.input-price{placeholder: "例）300", value: ""}/
+                          = f.text_field :price, placeholder: "例）300", value: "", class: "input-default input-price"
                   %li.clearfix
                     .l-left.commission
                       販売手数料 (10%)
