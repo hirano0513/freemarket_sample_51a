@@ -9,6 +9,7 @@ class Item < ApplicationRecord
   has_one :shipment
   belongs_to :user
   belongs_to :brand
+  belongs_to :category
   belongs_to :seller, class_name: "User"
   belongs_to :buyer, class_name: "User"
   accepts_nested_attributes_for :shipment
