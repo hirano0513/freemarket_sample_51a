@@ -41,75 +41,79 @@
                 %label 商品の説明
                 %span.form-require 必須
                 %textarea.textarea-default{placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5"}
-            .sell-content
-              %h3.sell-sub-head 商品の詳細
-              .sell-form-box
-                .form-group
-                  %label カテゴリー
-                  %span.form-require 必須
-                  %div
-                    .select-warp
-                      %select.select-default
-                        %option{value: ""} ---
-                      %i.fas.fa-angle-down
-                    .select-warp
-                      %select.select-default
-                        %option{value: ""} ---
-                      %i.fas.fa-angle-down
-                    .select-warp
-                      %select.select-default
-                        %option{value: ""} ---
-                      %i.fas.fa-angle-down
-                .form-group
-                  %label サイズ
-                  %span.form-require 必須
-                  %div
-                    .select-warp
-                      %select.select-default
-                        %option{value: ""} ---
-                      %i.fas.fa-angle-down
-                .form-group.brand--container
-                  %label ブランド
-                  %span.form-arbitrary 任意
-                  %div
-                    %input.input-default{placeholder: "例）シャネル", value: ""}/
-                .form-group
-                  %label 商品の状態
-                  %span.form-require 必須
-                  %div
-                    .select-warp
-                      %select.select-default
-                        %option{value: ""} ---
-                      %i.fas.fa-angle-down
-            .sell-content
-              %h3.sell-sub-head 配送について
-              = link_to root_path do
-                .form-question ?
-              .sell-form-box
-                .form-group
-                  %label 配送料の負担
-                  %span.form-require 必須
-                  %div
-                    .select-warp
-                      %select.select-default
-                        %option{value: ""} ---
-                      %i.fas.fa-angle-down
-                .form-group
-                  %label 発送元の地域
-                  %span.form-require 必須
-                  %div
-                    .select-warp
-                      %select.select-default
-                        %option{value: ""} ---
-                      %i.fas.fa-angle-down
-                .form-group
-                  %label 発送までの日数
-                  %span.form-require 必須
-                  %div
-                    .select-warp
-                      %select.select-default
-                        %option{value: ""} ---
-                      %i.fas.fa-angle-down
+            = form_for @item do |f|
+              .sell-content
+                %h3.sell-sub-head 商品の詳細
+                .sell-form-box
+                  .form-group
+                    %label カテゴリー
+                    %span.form-require 必須
+                    %div
+                      .select-warp
+                        %select.select-default
+                          %option{value: ""} ---
+                        %i.fas.fa-angle-down
+                      .select-warp
+                        %select.select-default
+                          %option{value: ""} ---
+                        %i.fas.fa-angle-down
+                      .select-warp
+                        %select.select-default
+                          %option{value: ""} ---
+                        %i.fas.fa-angle-down
+                  .form-group
+                    %label サイズ
+                    %span.form-require 必須
+                    %div
+                      .select-warp
+                        = f.select :size, Item.sizes.keys.to_a, {}, class: "select-default"
+                        %i.fas.fa-angle-down
+                  .form-group.brand--container
+                    %label ブランド
+                    %span.form-require-gray 任意
+                    %div
+                      %input.input-default{placeholder: "例）シャネル", value: ""}/
+                  .form-group
+                    %label 商品の状態
+                    %span.form-require 必須
+                    %div
+                      .select-warp
+                        = f.select :item_status, Item.item_statuses.keys.to_a, {}, class: "select-default"
+                        %i.fas.fa-angle-down
+              = form_for @shipment,url: {action: :create} do |f|
+                .sell-content
+                  %h3.sell-sub-head 配送について
+                  = link_to root_path do
+                    .form-question ?
+                  .sell-form-box
+                    .form-group
+                      %label 配送料の負担
+                      %span.form-require 必須
+                      %div
+                        .select-warp
+                          = f.select :cost_payer, Shipment.cost_payers.keys.to_a, {}, class: "select-default"
+                          %i.fas.fa-angle-down
+                    .form-group
+                      %label 配送の方法
+                      %span.form-require 必須
+                      %div
+                        .select-warp
+                          = f.select :method, Shipment.methods.keys.to_a, {}, class: "select-default"
+                          %i.fas.fa-angle-down
+                    .form-group
+                      %label 発送元の地域
+                      %span.form-require 必須
+                      %div
+                        .select-warp
+                          = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "--"}, {class: "select-default"}
+                          %i.fas.fa-angle-down
+                    .form-group
+                      %label 発送までの日数
+                      %span.form-require 必須
+                      %div
+                        .select-warp
+                          = f.select :days, Shipment.days.keys.to_a, {}, class: "select-default"
+                          %i.fas.fa-angle-down
             .sell-content
               %h3.sell-sub-head 販売価格(300〜9,999,999)
               = link_to root_path do
