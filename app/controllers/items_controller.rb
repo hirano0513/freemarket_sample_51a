@@ -5,29 +5,19 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    @shipment = Shipment.new
-    @brand = Brand.new
+    @item.build_shipment
+    @item.build_brand
   end
 
   def create
-    @item = Item.create(item_params)
-    @shipment = Shipment.create(shipment_params)
-    redirect_to root_path
-    @brand = Brand.create(brand_params)
-
+    @item = Item.new(item_params)
+    @item.save!
+    redirect_to root_path(@item)
   end
 
   private
   def item_params
-    params.require(:item).permit(:name, :size, :price, :item_status)
-  end
-
-  def shipment_params
-    params.require(:shipment).permit(:cost_payer, :method, :days, :prefecture_id)
-  end
-
-  def brand_params
-    params.require(:brand).permit(:name)
+    params.require(:item).permit(:name, :size, :price, :item_status, shipment_attributes: [:id, :cost_payer, :method, :days, :prefecture_id], brand_attributes: [:id, :name])
   end
 
 end
