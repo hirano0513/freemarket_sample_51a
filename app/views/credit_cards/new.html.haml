@@ -81,9 +81,26 @@
 
 = form_tag(pay_credit_cards_path, method: :post, id: 'charge-form',  name: "inputForm") do
   %label カード番号
+  %span.form-group-first__require  必須
   = text_field_tag "number", "", class: "number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
+  %ul.form-group-first__singup-card-list
+    %li
+      = image_tag("credit-cards/visa.svg", width: '49', height: '20', alt: '')
+    %li
+      = image_tag("credit-cards/Mastercard.svg", width: "34", height: "20", alt: "")
+    %li
+      = image_tag("credit-cards/Saison_card.svg", width: "30", height: "20", alt: "")
+    %li
+      = image_tag("credit-cards/JCB.svg", width: "32", height: "20", alt: "")
+    %li
+      = image_tag("credit-cards/American_Express.svg", width: "21", height: "20", alt: "")
+    %li
+      = image_tag("credit-cards/Diners_Club.svg", width: "32", height: "20", alt: "")
+    %li
+      = image_tag("credit-cards/discover.svg", width: "32", height: "20", alt: "")
   %br
   %label 有効期限
+  %span.form-group__require 必須
   %select#exp_month{name: "exp_month", type: "text"}
     %option{value: ""} --
     %option{value: "1"}01
@@ -98,6 +115,8 @@
     %option{value: "10"}10
     %option{value: "11"}11
     %option{value: "12"}12
+  .icon-arrow-bottom
+    %i.fas.fa-angle-down
   %span 月/
   %select#exp_year{name: "exp_year", type: "text"}
     %option{value: ""} --
@@ -112,9 +131,16 @@
     %option{value: "2027"}27
     %option{value: "2028"}28
     %option{value: "2029"}29
+  .icon-arrow-bottom
+    %i.fas.fa-angle-down
   %span 年
   %br
   %label セキュリティコード
+  %span.form-group__require 必須
   = text_field_tag "cvc", "", class: "cvc", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc"
+  .signup-seqcode
+    .signup-seqcode-text 
+      %span.signup-seqcode-text__question ?
+      カード裏側の番号とは？
   #card_token
   = submit_tag "追加する", id: "token_submit"
