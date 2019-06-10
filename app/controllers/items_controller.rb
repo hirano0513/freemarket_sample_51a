@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  
   def index
     # カテゴリー新着1
     @picup_category1 = Category.find(1).items.order("created_at ASC").limit(4)
@@ -14,4 +15,9 @@ class ItemsController < ApplicationController
 
   def new
   end
+
+  def show
+    @item = Item.find(params[:id])
+  end
+
 end
