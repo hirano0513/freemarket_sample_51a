@@ -21,44 +21,45 @@
               .th 
                 出品者
               .td 
-                = link_to 'ユーザーネーム', '#', class: 'a'
+                = link_to "#{@item.seller.nickname}", '#', class: 'a'
             .tr
               .th カテゴリー
               .td 
-                = link_to 'レディース', '#', class: 'a'
+                = link_to "#{@item.categories[0].name}", '#', class: 'a'
                 %br
                 %i.fas.fa-chevron-right
-                = link_to 'アクセサリー', '#', class: 'a'
+                = link_to "#{@item.categories[1].name}", '#', class: 'a'
                 %br
                 %i.fas.fa-chevron-right  
-                = link_to 'ピアス', '#', class: 'a'
+                = link_to "#{@item.categories[2].name}", '#', class: 'a'
             .tr
               .th ブランド
               .td 
-                ブランド
+                = link_to "#{@item.brand.name}", '#', class: 'a'
             .tr
               .th 商品の状態
               .td 
-                新品、未使用
+                = @item.item_status
             .tr
               .th 配送料の負担
               .td
-                送料込み(出品者負担)
+                = @item.shipment.cost_payer
             .tr
               .th 配送の方法
               .td
-                普通郵便(定形、定形外)
+                = @item.shipment.method
             .tr
               .th 配送元地域
               .td
-                = link_to '大阪府', '#', class: 'a'
+                大阪府
             .tr
               .th 発送日の目安
               .td
-                1~2日で発送
+                = @item.shipment.days
       .item-price-box
         %span.item-price
-          ￥ 350
+          ￥
+          = @item.price
         %span.item-tax
           (税込)
         %span.item-shipping-fee
@@ -80,3 +81,4 @@
         %button{type: "submit", class: "message-submit"}
           .span コメントする
   = render 'layouts/footer'
+
