@@ -25,13 +25,13 @@
                         -#   .upload-btn
                         -#     =link_to '編集', '#', class: 'upload-edit'
                         -#     =link_to '削除', '#'
-                  .upload-dropbox.have-item-0
-                    %input.upload-dropbox__file{multiple: "", name: "image", style: "display: none;", type: "file"}
-                    %pre.visible-pc
-                      :preserve
-                        ドラッグアンドドロップ
-                        またはクリックしてファイルをアップロード
-                    %i.fas.fa-camera.icon-camera
+                = f.label :images, class: "image-label" do
+                  .image-form-box
+                    %p ドラッグアンドドロップ
+                    %p またはクリックしてファイルをアップロード
+                  %i.fas.fa-camera.icon-camera
+                  = f.file_field :images, multiple: true, class: "image-label__input"
+
               .sell-content
                 .form-group
                   = f.label "商品名"
@@ -50,9 +50,9 @@
                     %span.form-require 必須
                     %div
                       .select-warp
-                        %select.select-default
-                          %option{value: ""} ---
-                        %i.fas.fa-angle-down
+                        = f.fields_for :items_categories do |parent|
+                          = parent.collection_select :category_id,  @parents, :id, :name,{prompt: "---"}, class: "select-default"
+                          %i.fas.fa-angle-down
                       .select-warp
                         %select.select-default
                           %option{value: ""} ---

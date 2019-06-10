@@ -159,6 +159,9 @@
                     top: 50%;
                     margin: 0 auto;
                   }
+                  &__input{
+                    display: none;
+                  }
                   .image-form-box {
                     @media screen and (max-width: 769px) {
                       display: none;
@@ -184,9 +187,6 @@
                     -webkit-transform: translate(-50%, -50%);
                     transform: translate(-50%, -50%);
                     font-size: 14px;
-                  }
-                  input {
-                    display: none;
                   }
                 }
               }
