@@ -23,7 +23,7 @@
     .main-container__heading ピックアップブランド
     %section.common-container.clearfix
       %h3.common-container__title
-        = link_to "#{@brand1_name} 新着アイテム",'#', class: 'btn'
+        = link_to "#{@brand1.name} 新着アイテム",'#', class: 'btn'
         .wrapper.clearfix
           = render partial: 'pickup', collection: @picup_brand1, as: :item
         .more
