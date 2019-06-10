@@ -43,11 +43,11 @@
             .tr
               .th 配送料の負担
               .td
-                = @shipment.cost_payer
+                = @item.shipment.cost_payer
             .tr
               .th 配送の方法
               .td
-                = @shipment.method
+                = @item.shipment.method
             .tr
               .th 配送元地域
               .td
@@ -55,7 +55,7 @@
             .tr
               .th 発送日の目安
               .td
-                = @shipment.days
+                = @item.shipment.days
       .item-price-box
         %span.item-price
           ￥
