@@ -86,3 +86,5 @@ gem 'erb2haml'
 gem 'dotenv-rails'
 gem 'active_hash'
 gem 'payjp'
+gem 'dotenv-rails'
+gem "jquery-rails"
