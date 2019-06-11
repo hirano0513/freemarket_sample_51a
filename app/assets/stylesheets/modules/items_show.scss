@@ -1,0 +1,185 @@
+.product-details {
+  background: #f5f5f5;
+  width: 100%;
+  position: relative;
+  margin: 0;
+  .default-container {
+    height: auto;
+    font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+    .item-box-container {
+      margin: 40px auto 0;
+      padding: 10px 15px 15px 15px;
+      background: #fff;
+      width: 650px;
+      min-height: 700px;
+      .item-name {
+        font-size: 24px;
+        text-align: center;
+        line-height: 60px;
+        font-weight: 700;     
+        background: #fff;
+        margin: 0 auto;
+        .item-box {
+          margin: 0 auto 0;
+          background: #fff;
+          display: flex;
+          width: 600px;
+          .item-photo {
+            position: relative;
+            min-width: 280px;
+            max-width: 360px;
+            min-height: 280px;
+            margin: 0 auto;
+            background: #fafafa;
+            .gallery {
+              position: relative;
+              overflow: hidden;
+              clear: both;
+              .owl-dot {
+                // display: none;
+                width: 60px;
+                height: 60px;
+                max-height: none;
+                position: relative;
+                overflow: hidden;
+                display: inline-block;
+                opacity: .4;
+                cursor: pointer;
+                float: left;
+              }
+            }
+          }
+          .item-detail-table {
+            float: right;
+            max-width: 300px;
+            min-height: 420px;
+            margin: 0 auto;
+            border-collapse: collapse;
+            border: 1px solid #f5f5f5;
+            width: 100%;
+            font-size: 14px;
+            background: #fff;
+            .tr {
+              display: table-row;
+              vertical-align: inherit;
+              border-color: inherit;
+              display: flex;
+              .th {
+                float: left;
+                width: 39%;
+                text-align: left;
+                font-weight: 400;
+                background: #fafafa;
+                padding: 16px 8px;
+                border-collapse: collapse;
+                border: 1px solid #f5f5f5;
+                font-size: 14px;
+                line-height: 1.4;
+              }
+              .td {
+                border-collapse: collapse;
+                border: 1px solid #f5f5f5;
+                width: 61%;
+                background: #fff;
+                font-size: 14px;
+                line-height: 1.4;
+                padding: 16px 8px;
+                color: #333;
+                text-align: left;
+                font-weight: 400;
+                .a {
+                  float: left;
+                  color: #0099e8;
+                  text-decoration: none;
+                  display: block;
+                  touch-action: manipulation;
+                  font-size: inherit;
+                  line-height: inherit;
+                }
+                .fas.fa-chevron-right {
+                  color: #0099e8;
+                  float: left;
+                }
+              }
+            }          
+          }
+        }
+      }
+      .item-price-box {
+        margin: auto;
+        background: #fff;
+        line-height: 70px;
+        height: 70px;
+        text-align: center;
+        width: 650px;
+        .item-price {
+          margin: 0 16px 0 0;
+          font-size: 32px;
+          font-weight: 600;
+        }
+        .item-tax {
+          font-size: 10px;
+        }
+        .item-shipping-fee {
+          font-size: 16px;
+        }
+        .item-buy-btn {
+          display: block;
+          margin: 0 auto;
+          height: 60px;
+          line-height: 60px;
+          background: #ea352d;
+          color: #fff;
+          text-align: center;
+          font-weight: 600;
+          text-decoration: none;
+          font-size: 24px
+          }
+        }
+      .item-description {
+        background: #fff;
+        width: 650px;
+        margin: 60px auto 0;
+        text-align: left;
+        white-space: pre-wrap;
+        .item-description-inner {
+          font-size: 18px;
+          line-height: 1.6;
+        }
+      }    
+    }
+    .message-container {
+      background: #fff;
+      margin: 10px auto 30px;
+      width: 680px;
+      .message-content {
+        padding-top: 5px;
+        .caution {
+          color: #333;
+          background: #fff6de;
+          padding: 8px;
+          font-size: 14px;
+          margin: 5px 25px;
+          height: 100%;
+          width: 620px;
+        }
+        .textarea {
+          width: 630px;
+          margin: 10px 25px 5px;
+          height: 100px;
+        }
+        .message-submit {
+          width: 635px;
+          margin: 3px 25px 10px;
+          height: 50px;
+          background: #aaa;
+          .span {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+          }
+        }
+      }
+    }  
+  }
+} 
