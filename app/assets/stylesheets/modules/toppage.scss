@@ -42,7 +42,7 @@
           }
           .content {
             padding: 16px;
-            height: 110px;
+            max-height: 110px;
             &__title {
               overflow: hidden;
               position: relative;
@@ -98,8 +98,6 @@
       bottom: 0;
       left: 0;
       z-index: 1;
-      width: 213px;
-      height: 213px;
   }
   .font-2 {
     font-size: 16px;
