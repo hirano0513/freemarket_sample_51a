@@ -2,17 +2,33 @@
 
 .top-page
   .main-container
+    %section.common-container.clearfix
+      %h3.common-container__title
+        = link_to "新着アイテム",'#', class: 'btn'
+        .wrapper.clearfix
+          = render partial: 'pickup', collection: @items, as: :item
+        .more
+          = link_to 'すべての商品を見る','#', class: 'menu-btn'
+
     .main-container__heading ピックアップカテゴリー
     %section.common-container.clearfix
-      %h3.common-container__title 
-        = link_to 'レディース 新着アイテム','#', class: 'btn'
-        = render partial: 'pickup_category'
+      %h3.common-container__title
+        = link_to "#{@category1.name} 新着アイテム",'#', class: 'btn'
+        .wrapper.clearfix
+          = render partial: 'pickup', collection: @picup_category1, as: :item
+        .more
+          = link_to 'すべての商品を見る','#', class: 'menu-btn'
+
   .main-container
     .main-container__heading ピックアップブランド
     %section.common-container.clearfix
-      %h3.common-container__title 
-        = link_to 'Supreme 新着アイテム','#', class: 'btn'
-        = render partial: 'pickup_brand'
+      %h3.common-container__title
+        = link_to "#{@brand1.name} 新着アイテム",'#', class: 'btn'
+        .wrapper.clearfix
+          = render partial: 'pickup', collection: @picup_brand1, as: :item
+        .more
+          = link_to 'すべての商品を見る','#', class: 'menu-btn'
+
 
 = render 'layouts/footer'
 = render 'render/footer-sell-btn'

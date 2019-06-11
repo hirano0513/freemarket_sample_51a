@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'purchase/index'
   get 'purchase/done'
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks',
-                 registrations: 'users/registrations', sessions: 'users/sessions'}
+                registrations: 'users/registrations', sessions: 'users/sessions'}
 
   devise_scope :user do
     get 'users/sign_up/index', to: 'users/registrations#index'
@@ -33,7 +33,7 @@ Rails.application.routes.draw do
     resources :personals, only: [:show]
   end
 
-  resources :items, only: [:index, :new, :create]
+  resources :items, only: [:index, :new, :create, :show]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root  'items#index'
