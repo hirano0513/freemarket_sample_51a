@@ -8,17 +8,13 @@
         レディース　大人フープ♡ピアス　ゴールド
         .item-box
           .item-photo
-            .main-image
-              = image_tag "sample_item_details.jpg", width: "300px", height: "300px";             
-              .owl-dot
-                = image_tag "sample_item_details2.jpg", width: "60px", height: "60px";
-              .owl-dot
-                = image_tag "sample_item_details2.jpg", width: "60px", height: "60px";
-              .owl-dot
-                = image_tag "sample_item_details2.jpg", width: "60px", height: "60px";
+            .gallery
+              = image_tag @item.images[0], class: 'owl', width: "300px", height: "300px";
+              - @item.images.each do |image|
+                = image_tag image, class: 'owl-dot', width: "60px", height: "60px";
           .item-detail-table
             .tr
-              .th 
+              .th   
                 出品者
               .td 
                 = link_to "#{@item.seller.nickname}", '#', class: 'a'
@@ -51,7 +47,7 @@
             .tr
               .th 配送元地域
               .td
-                大阪府
+                = link_to "#{@item.shipment.prefecture.name}", '#', class: 'a'
             .tr
               .th 発送日の目安
               .td
@@ -64,15 +60,10 @@
           (税込)
         %span.item-shipping-fee
           送料込み
-        = link_to '購入画面に進む', '#', class: 'item-buy-btn'
+        = link_to '購入画面に進む', item_buys_path(params[:id]), class: 'item-buy-btn'
       .item-description
         %p.item-description-inner
-          ご覧頂きありがとうございます(*^-^*)
-          %br
-          インスタグラムでも人気のある大ぶりのフープピアスです。
-          歩く度にゆらゆらと揺れて上品でエレガントな大人の女性を演出してくれます。
-          フープ自体はとても薄くて軽いので無理なくお使い頂けます。
-          華やかなデザインで、カジュアルな服装からフォーマルな服装まで幅広く、普段使いから結婚式などのパーティーにもオススメです
+          = @item.description
     .message-container
       .message-content
         .caution
@@ -81,4 +72,3 @@
         %button{type: "submit", class: "message-submit"}
           .span コメントする
   = render 'layouts/footer'
-
