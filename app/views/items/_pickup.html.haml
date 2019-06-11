@@ -5,7 +5,7 @@
     .content
       %h3.content__title.font-2 #{item.name}
       .item-box
-        .item-box__price.font-5 ¥#{item.price}
+        .item-box__price.font-5 ¥#{item.price.to_s(:delimited, delimiter: ',')}
         .item-box__mask.font-2
           %i.far.fa-heart
           %span #{item.like}
