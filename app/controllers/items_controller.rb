@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
 
   before_action :move_to_index, except: :index
+  before_action :set_item, only: [:show, :destroy]
 
   def index
     # カテゴリー新着1
@@ -48,11 +49,9 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
   end
 
-  def destroy
-    @item = Item.find(params[:id])
+  def destroy    
     @item.destroy if @item.seller.id == current_user.id
     redirect_to root_path, notice: '商品を削除しました'
   end
@@ -67,4 +66,7 @@ class ItemsController < ApplicationController
     redirect_to new_user_session_path unless user_signed_in?
   end
 
+  def set_item
+    @item = Item.find(params[:id])
+  end
 end
