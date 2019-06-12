@@ -31,9 +31,10 @@
             min-height: 280px;
             margin: 0 auto;
             background: #fafafa;
-            .main-image {
+            .gallery {
               position: relative;
               overflow: hidden;
+              clear: both;
               .owl-dot {
                 width: 60px;
                 height: 60px;

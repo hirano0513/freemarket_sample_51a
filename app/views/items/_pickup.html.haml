@@ -1,11 +1,11 @@
 %section.section
-  = link_to '#' do
+  = link_to item_path(item.id) do
     %figure.section__image
-      = image_tag "#{item.images[0].image}", class: 'item-image'
+      = image_tag item.images[0].variant(combine_options:{resize:"213x213^",crop:"213x213+0+0",gravity: :center}).processed, class: 'item-image'
     .content
       %h3.content__title.font-2 #{item.name}
       .item-box
-        .item-box__price.font-5 ¥#{item.price}
+        .item-box__price.font-5 ¥#{item.price.to_s(:delimited, delimiter: ',')}
         .item-box__mask.font-2
           %i.far.fa-heart
           %span #{item.like}

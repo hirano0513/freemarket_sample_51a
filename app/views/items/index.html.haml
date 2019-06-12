@@ -2,33 +2,86 @@
 
 .top-page
   .main-container
-    %section.common-container.clearfix
-      %h3.common-container__title
-        = link_to "新着アイテム",'#', class: 'btn'
-        .wrapper.clearfix
-          = render partial: 'pickup', collection: @items, as: :item
-        .more
-          = link_to 'すべての商品を見る','#', class: 'menu-btn'
-
     .main-container__heading ピックアップカテゴリー
-    %section.common-container.clearfix
-      %h3.common-container__title
-        = link_to "#{@category1.name} 新着アイテム",'#', class: 'btn'
-        .wrapper.clearfix
-          = render partial: 'pickup', collection: @picup_category1, as: :item
-        .more
-          = link_to 'すべての商品を見る','#', class: 'menu-btn'
+    - if (@picup_category_items1.length != 0)
+      %section.common-container.clearfix
+        %h3.common-container__title
+          = link_to "#{@picup_category_items1[0].categories[0].name} 新着アイテム",'#', class: 'btn'
+          .wrapper.clearfix
+            = render partial: 'pickup', collection: @picup_category_items1, as: :item
+          .more
+            = link_to 'すべての商品を見る','#', class: 'menu-btn'
 
-  .main-container
-    .main-container__heading ピックアップブランド
-    %section.common-container.clearfix
-      %h3.common-container__title
-        = link_to "#{@brand1.name} 新着アイテム",'#', class: 'btn'
-        .wrapper.clearfix
-          = render partial: 'pickup', collection: @picup_brand1, as: :item
-        .more
-          = link_to 'すべての商品を見る','#', class: 'menu-btn'
+    - if (@picup_category2.length != 0)
+      %section.common-container.clearfix
+        %h3.common-container__title
+          = link_to "#{@picup_category2[0].categories[0].name} 新着アイテム",'#', class: 'btn'
+          .wrapper.clearfix
+            = render partial: 'pickup', collection: @picup_category2, as: :item
+          .more
+            = link_to 'すべての商品を見る','#', class: 'menu-btn'
 
+    - if (@picup_category3.length != 0)
+      %section.common-container.clearfix
+        %h3.common-container__title
+          = link_to "#{@picup_category3[0].categories[0].name} 新着アイテム",'#', class: 'btn'
+          .wrapper.clearfix
+            = render partial: 'pickup', collection: @picup_category3, as: :item
+          .more
+            = link_to 'すべての商品を見る','#', class: 'menu-btn'
+
+    - if (@picup_category4.length != 0)
+      %section.common-container.clearfix
+        %h3.common-container__title
+          = link_to "#{@picup_category4[0].categories[0].name} 新着アイテム",'#', class: 'btn'
+          .wrapper.clearfix
+            = render partial: 'pickup', collection: @picup_category4, as: :item
+          .more
+            = link_to 'すべての商品を見る','#', class: 'menu-btn'
+
+  -# .main-container
+  -#   .main-container__heading ピックアップブランド
+  -#   - if (@picup_brand1.length != 0)
+  -#     %section.common-container.clearfix
+  -#       %h3.common-container__title
+  -#         = link_to "#{@picup_brand1[0].brand} 新着アイテム",'#', class: 'btn'
+  -#         .wrapper.clearfix
+  -#           = render partial: 'pickup', collection: @picup_brand1, as: :item
+  -#         .more
+  -#           = link_to 'すべての商品を見る','#', class: 'menu-btn'
+
+  -# .main-container
+  -#   .main-container__heading ピックアップブランド
+  -#   - if (@picup_brand2.length != 0)
+  -#     %section.common-container.clearfix
+  -#       %h3.common-container__title
+  -#         = link_to "#{@brand2.name} 新着アイテム",'#', class: 'btn'
+  -#         .wrapper.clearfix
+  -#           = render partial: 'pickup', collection: @picup_brand2, as: :item
+  -#         .more
+  -#           = link_to 'すべての商品を見る','#', class: 'menu-btn'
+
+  -# .main-container
+  -#   .main-container__heading ピックアップブランド
+  -#   - if (@picup_brand3.length != 0)
+  -#     %section.common-container.clearfix
+  -#       %h3.common-container__title
+  -#         = link_to "#{@brand3.name} 新着アイテム",'#', class: 'btn'
+  -#         .wrapper.clearfix
+  -#           = render partial: 'pickup', collection: @picup_brand3, as: :item
+  -#         .more
+  -#           = link_to 'すべての商品を見る','#', class: 'menu-btn'
+
+  -# .main-container
+  -#   .main-container__heading ピックアップブランド
+  -#   - if (@picup_brand4.length != 0)
+  -#     %section.common-container.clearfix
+  -#       %h3.common-container__title
+  -#         = link_to "#{@brand4.name} 新着アイテム",'#', class: 'btn'
+  -#         .wrapper.clearfix
+  -#           = render partial: 'pickup', collection: @picup_brand4, as: :item
+  -#         .more
+  -#           = link_to 'すべての商品を見る','#', class: 'menu-btn'
 
 = render 'layouts/footer'
 = render 'render/footer-sell-btn'
