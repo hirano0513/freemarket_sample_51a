@@ -124,15 +124,15 @@
                       .l-right.sell-price-input
                         ¥
                         %div
-                          = f.text_field :price, placeholder: "例）300", value: "", class: "input-default input-price"
+                          = f.text_field :price, placeholder: "例）300", value: "", class: "input-default input-price", id: "price-input-box"
                   %li.clearfix
                     .l-left.commission
                       販売手数料 (10%)
-                    .l-right.commission -
+                    #commission.l-right -
                   %li.clearfix
                     .l-left.profit
                       販売利益
-                    .l-right.profit -
+                    #profit.l-right -
             .sell-content.sell-btn-box
               %div
                 %p
