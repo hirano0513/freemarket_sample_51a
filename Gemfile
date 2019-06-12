@@ -87,6 +87,7 @@ gem 'pry-rails'
 gem 'erb2haml'
 gem 'dotenv-rails'
 gem 'active_hash'
+gem 'payjp'
+gem "jquery-rails"
 gem 'ancestry'
 gem 'gretel'
-gem 'jquery-rails'
