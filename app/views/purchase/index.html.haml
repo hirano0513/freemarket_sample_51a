@@ -1,3 +1,65 @@
+.buy-check-page
+  .header
+    %h1
+      = link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?3547997460", alt: "mercari"),"/"
+  .main
+    %section.container
+      %h2.head 購入内容の確認
+      .buy-content.buy-item
+        .buy-content-inner
+          %h3.buy-content-inner__image
+            = image_tag @item.images[0], class: 'image', alt: "", width: "128", height: "128"
+          %p.buy-content-inner__name #{@item.name}
+          %form{action: "", method: "POST", class: "buy-form"}
+            %p.buy-price ¥#{@item.price.to_s(:delimited, delimiter: ',')}
+            %span.item-fee 送料込み
+            %ul.buy-accordion
+              %li.accordion-parent
+                .accordion-toggle ポイントはありません
+            %ul.buy-price-table
+              %li.buy-price-row
+                .buy-price-cell-first 支払い金額
+                .buy-price-cell-second
+                  %span.pay ¥#{@item.price.to_s(:delimited, delimiter: ',')}
+            %p.error-text この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
+            %ul.buy-accordion
+             
+              %li.accordion-parent
+                .accordion-toggle 購入する
+            .app-google
+              = link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?3547997460", alt: ""),"https://itunes.apple.com/jp/app/id667861049?l=ja&amp;mt=8"
+              = link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?3547997460", alt: ""),"https://play.google.com/store/apps/details?id=com.kouzoh.mercari&amp;hl=ja"
+      .buy-content.buy-user-info
+        .buy-content-inner
+          %h3 配送先
+          %address.buy-user-text 〒-
+          %p.buy-user-text
+            = link_to "/", class: "buy-user-fix" do
+              %span 変更する
+              %i.fas.fa-angle-right
+      .buy-content.buy-user-info.buy-user-info-second
+        .buy-content-inner
+          %h3 お支払い方法
+          %address.buy-user-text /
+          %p.buy-user-text
+            = link_to "/", class: "buy-user-fix" do
+              %span 変更する
+              %i.fas.fa-angle-right
+  .footer
+    %ul.clearfix
+      %li
+        = link_to "プライバシーポリシー", "/"
+      %li
+        = link_to "メルカリ利用規約", "/"
+      %li
+        = link_to "特定商取引に関する表記", "/"
+    = link_to image_tag('//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?3547997460', alt: "mercari", width: "80", height: "65" , class: "signal-footer-logo"), "/"
+    %p
+      %small © 2019 Mercari
+
+
+
+
 %h2 購入を確定しますか？
 %p Apple MacBook Pro 13インチ
 %p ¥135,000(送料込み)
@@ -14,3 +76,4 @@
 %br
 = form_tag(action: :pay, method: :post) do
   %button 購入する
+
