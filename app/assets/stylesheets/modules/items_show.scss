@@ -11,7 +11,7 @@
       padding: 10px 15px 15px 15px;
       background: #fff;
       width: 650px;
-      min-height: 700px;
+      min-height: 780px;
       .item-name {
         font-size: 24px;
         text-align: center;
@@ -122,9 +122,12 @@
         .item-shipping-fee {
           font-size: 16px;
         }
+      }
+      .item-edit {
+        margin: auto;
         .item-buy-btn {
           display: block;
-          margin: 0 auto;
+          margin: 0 auto 20px;
           height: 60px;
           line-height: 60px;
           background: #ea352d;
@@ -138,14 +141,37 @@
       .item-description {
         background: #fff;
         width: 650px;
-        margin: 60px auto 0;
+        margin: 0 auto 0;
         text-align: left;
         white-space: pre-wrap;
         .item-description-inner {
           font-size: 18px;
           line-height: 1.6;
-        }
-      }    
+          padding: 0 0 10px 30px;
+        }   
+      }
+      .edit-btn {
+        display: block;
+        margin: 15px auto;
+        height: 53px;
+        line-height: 53px;
+        background: #ea352d;
+        color: #fff;
+        text-align: center;
+        text-decoration: none;
+        font-size: 14px
+      }
+      .delete-btn {
+        display: block;
+        margin: 15px auto;
+        height: 53px;
+        line-height: 53px;
+        background: #aaa;
+        color: #fff;
+        text-align: center;
+        text-decoration: none;
+        font-size: 14px
+      }
     }
     .message-container {
       background: #fff;
