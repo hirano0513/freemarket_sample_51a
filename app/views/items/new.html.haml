@@ -49,26 +49,21 @@
                     %label カテゴリー
                     %span.form-require 必須
                     %div
-                      .select-warp
-                        = f.fields_for :items_categories do |parent|
-                          = parent.collection_select :category_id,  @parents, :id, :name,{prompt: "---"}, class: "select-default"
-                          %i.fas.fa-angle-down
-                      .select-warp
-                        %select.select-default
-                          %option{value: ""} ---
-                        %i.fas.fa-angle-down
-                      .select-warp
-                        %select.select-default
-                          %option{value: ""} ---
-                        %i.fas.fa-angle-down
-                  .form-group
+                      = f.fields_for :items_categories do |parent|
+                        #parent-form-area
+                          .select-warp
+                            = parent.collection_select :category_id, @parents, :id, :name,{prompt: "---"}, class: "select-default", id: "parent-form"
+                            %i.fas.fa-angle-down
+                        #children-form-area
+                        #grandchild-form-area
+                  .form-group.hidden
                     %label サイズ
                     %span.form-require 必須
                     %div
                       .select-warp
                         = f.select :size, Item.sizes.keys.to_a, {}, class: "select-default"
                         %i.fas.fa-angle-down
-                  .form-group.brand--container
+                  .form-group.hidden.brand--container
                     = f.fields_for :brand do |brand|
                       = brand.label "ブランド"
                       %span.form-require-gray 任意
@@ -92,9 +87,9 @@
                       %span.form-require 必須
                       %div
                         .select-warp
-                          = shipment.select :cost_payer, Shipment.cost_payers.keys.to_a, {}, class: "select-default"
+                          = shipment.select :cost_payer, Shipment.cost_payers.keys.to_a, {}, class: "select-default", id: "shipment-cost-form"
                           %i.fas.fa-angle-down
-                    .form-group
+                    .form-group.shipment-hidden
                       = shipment.label "配送の方法"
                       %span.form-require 必須
                       %div
