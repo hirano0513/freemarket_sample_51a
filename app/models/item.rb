@@ -4,14 +4,14 @@ class Item < ApplicationRecord
   validates :price, numericality: {only_integer: true,greater_than: 300, less_than: 9999999}
   
   has_many_attached :images
-  has_one :shipment
+  has_one :shipment, dependent: :destroy
   belongs_to :user, optional: true
   belongs_to :brand, optional: true
   belongs_to :seller, class_name: "User"
   belongs_to :buyer, class_name: "User", optional: true
   accepts_nested_attributes_for :shipment
   accepts_nested_attributes_for :brand
-  has_many :items_categories
+  has_many :items_categories, dependent: :destroy
   has_many :categories, through: :items_categories
   accepts_nested_attributes_for :items_categories, allow_destroy: true
 

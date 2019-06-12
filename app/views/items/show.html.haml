@@ -60,10 +60,13 @@
           (税込)
         %span.item-shipping-fee
           送料込み
-        = link_to '購入画面に進む', item_buys_path(params[:id]), class: 'item-buy-btn'
-      .item-description
-        %p.item-description-inner
-          = @item.description
+      .item-edit
+        -if @item.seller.id != current_user.id
+          = link_to '購入画面に進む', item_path(params[:id]), class: 'item-buy-btn'  
+        = render 'render/item-descliption'
+      -if @item.seller.id == current_user.id
+        = link_to "商品の編集", '#', class: 'edit-btn'
+        = link_to "この商品を削除する", item_path(params[:id]), method: :delete, class: 'delete-btn'
     .message-container
       .message-content
         .caution
