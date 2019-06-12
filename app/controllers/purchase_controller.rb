@@ -11,6 +11,8 @@ class PurchaseController < ApplicationController
       customer = Payjp::Customer.retrieve(card.customer_id)
       @default_card_information = customer.cards.retrieve(card.card_id)
     end
+
+    @item = Item.find(params[:item_id])
   end
 
   def pay
