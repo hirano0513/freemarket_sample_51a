@@ -3,7 +3,7 @@ class PurchaseController < ApplicationController
   require 'payjp'
 
   def index
-    card = CreditCard.where(user_id: current_user.id).first
+    card = current_user.credit_card
     if card.blank?
       redirect_to controller: "credit_cards", action: "new"
     else
@@ -14,7 +14,7 @@ class PurchaseController < ApplicationController
   end
 
   def pay
-    card = CreditCard.where(user_id: current_user.id).first
+    card = current_user.credit_card
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     Payjp::Charge.create(
       :amount => 13500,
