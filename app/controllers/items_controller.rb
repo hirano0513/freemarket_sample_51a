@@ -26,6 +26,9 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save!
+      shipment_id = Shipment.find(@item.id).id
+      item = Item.find(@item.id)
+      item.update(shipment_id: shipment_id)
       redirect_to root_path
     else
       redirect_to new_item_path
@@ -34,6 +37,19 @@ class ItemsController < ApplicationController
   
   def show
     @item = Item.find(params[:id])
+  end
+
+  def search
+    respond_to do |format|
+      format.html
+      format.json do
+        if params[:parent_id]
+          @children = Category.find(params[:parent_id]).children
+        else
+          @grand_children = Category.find(params[:child_id]).children
+        end
+      end
+    end
   end
 
   private
