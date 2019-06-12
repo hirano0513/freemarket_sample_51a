@@ -3,8 +3,7 @@ class CreditCardsController < ApplicationController
   require "payjp"
   
   def new
-    card = current_user.credit_card
-    redirect_to action: "show" if card.present?
+    redirect_to action: "show" if current_user.credit_card.present?
   end
 
   def pay
