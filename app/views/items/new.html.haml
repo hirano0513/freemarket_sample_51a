@@ -61,7 +61,7 @@
                     %span.form-require 必須
                     %div
                       .select-warp
-                        = f.select :size, Item.sizes.keys.to_a, {}, class: "select-default"
+                        = f.select :size, Item.sizes.map{ |k, v| [t("enums.item.sizes.#{k}"), v] },{prompt: "---"}, class: "select-default"
                         %i.fas.fa-angle-down
                   .form-group.hidden.brand--container
                     = f.fields_for :brand do |brand|
@@ -74,7 +74,7 @@
                     %span.form-require 必須
                     %div
                       .select-warp
-                        = f.select :item_status, Item.item_statuses.keys.to_a, {}, class: "select-default"
+                        = f.select :item_status, Item.item_statuses.map{ |k, v| [t("enums.item.item_statuses.#{k}"), v] },{prompt: "---"}, class: "select-default"
                         %i.fas.fa-angle-down
               .sell-content
                 = f.fields_for :shipment do |shipment|
@@ -87,14 +87,14 @@
                       %span.form-require 必須
                       %div
                         .select-warp
-                          = shipment.select :cost_payer, Shipment.cost_payers.keys.to_a, {}, class: "select-default", id: "shipment-cost-form"
+                          = shipment.select :cost_payer, Shipment.cost_payers.map{ |k, v| [t("enums.shipment.cost_payers.#{k}"), v] }, {prompt: "---"}, class: "select-default", id: "shipment-cost-form"
                           %i.fas.fa-angle-down
                     .form-group.shipment-hidden
                       = shipment.label "配送の方法"
                       %span.form-require 必須
                       %div
                         .select-warp
-                          = shipment.select :method, Shipment.methods.keys.to_a, {}, class: "select-default"
+                          = shipment.select :method, Shipment.methods.map{ |k, v| [t("enums.shipment.methods.#{k}"), v] }, {prompt: "---"}, class: "select-default"
                           %i.fas.fa-angle-down
                     .form-group
                       = shipment.label "発送元の地域"
@@ -108,7 +108,7 @@
                       %span.form-require 必須
                       %div
                         .select-warp
-                          = shipment.select :days, Shipment.days.keys.to_a, {}, class: "select-default"
+                          = shipment.select :days, Shipment.days.map{ |k, v| [t("enums.shipment.days.#{k}"), v] }, {prompt: "---"}, class: "select-default"
                           %i.fas.fa-angle-down
             .sell-content
               %h3.sell-sub-head 販売価格(300〜9,999,999)
