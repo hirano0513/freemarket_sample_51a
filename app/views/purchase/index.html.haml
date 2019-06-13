@@ -10,7 +10,7 @@
           %h3.buy-content-inner__image
             = image_tag @item.images[0], class: 'image', alt: "", width: "128", height: "128"
           %p.buy-content-inner__name #{@item.name}
-          %form{action: "", method: "POST", class: "buy-form"}
+          .buy-form
             %p.buy-price ¥#{@item.price.to_s(:delimited, delimiter: ',')}
             %span.item-fee 送料込み
             %ul.buy-accordion
@@ -21,26 +21,42 @@
                 .buy-price-cell-first 支払い金額
                 .buy-price-cell-second
                   %span.pay ¥#{@item.price.to_s(:delimited, delimiter: ',')}
-            %p.error-text この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
-            %ul.buy-accordion
-             
-              %li.accordion-parent
-                .accordion-toggle 購入する
+            - if current_user.credit_card.blank?
+              %p.error-text この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
+              %ul.buy-accordion
+                %li.accordion-parent
+                  .accordion-toggle 購入する
+            - else 
+            = form_tag(action: :pay, method: :post) do
+              %button 購入する
             .app-google
               = link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?3547997460", alt: ""),"https://itunes.apple.com/jp/app/id667861049?l=ja&amp;mt=8"
               = link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?3547997460", alt: ""),"https://play.google.com/store/apps/details?id=com.kouzoh.mercari&amp;hl=ja"
       .buy-content.buy-user-info
         .buy-content-inner
           %h3 配送先
-          %address.buy-user-text 〒-
+          %address.buy-user-text 
+            .buy-user-text__postal_code 〒535-0035
+            .buy-user-text__adress 大阪市鶴見区浜1-3-21
+            .buy-user-text__user-name 中川 恵太
           %p.buy-user-text
             = link_to "/", class: "buy-user-fix" do
               %span 変更する
               %i.fas.fa-angle-right
       .buy-content.buy-user-info.buy-user-info-second
         .buy-content-inner
-          %h3 お支払い方法
-          %address.buy-user-text /
+          %h3 支払い方法
+          - if @default_card_information.blank?
+            %br /
+          - else
+            -#以下カード情報を表示
+            = "**** **** **** " + @default_card_information.last4
+            - exp_month = @default_card_information.exp_month.to_s
+            - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+            %br
+            = exp_month + " / " + exp_year
+            %figure
+              = image_tag("//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?613125057", width: "49", height: "15", alt: "visa")
           %p.buy-user-text
             = link_to "/", class: "buy-user-fix" do
               %span 変更する
@@ -56,24 +72,3 @@
     = link_to image_tag('//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?3547997460', alt: "mercari", width: "80", height: "65" , class: "signal-footer-logo"), "/"
     %p
       %small © 2019 Mercari
-
-
-
-
-%h2 購入を確定しますか？
-%p Apple MacBook Pro 13インチ
-%p ¥135,000(送料込み)
-%br
-%h3 支払い方法
-- if @default_card_information.blank?
-  %br /
-- else
-  -#以下カード情報を表示
-  = "**** **** **** " + @default_card_information.last4
-  - exp_month = @default_card_information.exp_month.to_s
-  - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
-  = exp_month + " / " + exp_year
-%br
-= form_tag(action: :pay, method: :post) do
-  %button 購入する
-
