@@ -1,22 +1,22 @@
 $(function(){
   function buildImage(){
     var html = `<div class="upload-container">
-    <div class="uploads">
-    <ul id="image-area">
-    </ul>
-    </div>
-    </div>`
+                  <div class="uploads">
+                    <ul id="image-area">
+                    </ul>
+                  </div>
+                </div>`
     return html;
   }
   function buildImageArea(){
     var html= `<li class="upload-box">
-    <figure class="upload-figure landscape" id="image-upload">
-    </figure>
-    <div class="upload-btn">
-    <a class="upload-edit" href="#">編集</a>
-    <a class="upload-destroy" href="javascript:void(0)">削除</a>
-    </div>
-    </li>`
+                <figure class="upload-figure landscape" id="image-upload">
+                </figure>
+                <div class="upload-btn">
+                  <a class="upload-edit" href="#">編集</a>
+                  <a class="upload-destroy" href="javascript:void(0)">削除</a>
+                </div>
+              </li>`
     return html;
   }
   $('#item_images').on('change', function(e){
