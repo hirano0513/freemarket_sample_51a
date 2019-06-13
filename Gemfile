@@ -92,3 +92,4 @@ gem "jquery-rails"
 gem 'ancestry'
 gem 'gretel'
 gem 'enum_help'
+gem 'unf_ext', '~> 0.0.7.6'
