@@ -1,7 +1,8 @@
 = render 'layouts/header'
 
 .credit-card-edit
-  .bread-crumbs
+  - breadcrumb :card_edit
+  = render "render/bread-crumbs"
   .l-container.clearfix
     .l-content
       %section.l-chapter-container
