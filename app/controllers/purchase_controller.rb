@@ -22,8 +22,12 @@ class PurchaseController < ApplicationController
       :customer => card.customer_id,
       :currency => 'jpy',
     )
-    @item.update(buyer_id: current_user.id)
-    redirect_to root_path
+    if @item.update!(buyer_id: current_user.id)
+      redirect_to root_path
+    else
+      flash[:notice] = "エラーが発生しました。"
+      redirect_to root_parh
+    end
   end
 
   def done
