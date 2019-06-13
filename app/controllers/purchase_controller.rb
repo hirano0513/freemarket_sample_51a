@@ -1,6 +1,7 @@
 class PurchaseController < ApplicationController
 
   require 'payjp'
+  before_action :set_item, only: %i[pay done]
 
   def index
     card = current_user.credit_card
@@ -21,12 +22,16 @@ class PurchaseController < ApplicationController
       :customer => card.customer_id,
       :currency => 'jpy',
     )
-    item = Item.find(params[:item_id])
-    item.update(buyer_id: current_user.id)
+    @item.update(buyer_id: current_user.id)
     redirect_to root_path
   end
 
   def done
+  end
+
+  private
+
+  def set_item
     @item = Item.find(params[:item_id])
   end
 
