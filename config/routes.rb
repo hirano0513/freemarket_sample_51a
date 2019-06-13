@@ -21,14 +21,6 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :purchase, only: [:index] do
-    collection do
-      get 'index', to: 'purchase#index'
-      post 'pay', to: 'purchase#pay'
-      get 'done', to: 'purchase#done'
-    end
-  end
-
   resources :users, only: [:show, :edit, :update] do
     resources :personals, only: [:show]
   end
@@ -37,7 +29,14 @@ Rails.application.routes.draw do
     collection do
       get :search
     end
-    resources :buys, only: [:index]
+    
+    resources :purchase, only: [:index] do
+      collection do
+        get 'index', to: 'purchase#index'
+        post 'pay', to: 'purchase#pay'
+        get 'done', to: 'purchase#done'
+      end
+    end
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
