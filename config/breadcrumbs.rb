@@ -25,3 +25,8 @@ crumb :personal_edit do
   link '本人情報の登録'
   parent :user
 end
+
+# アイテム詳細ページ用
+crumb :item do |item|
+  link "#{item.name}"
+end
