@@ -43,8 +43,12 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     if @item.save!
       shipment_id = Shipment.find(@item.id).id
-      item = Item.find(@item.id)
-      item.update(shipment_id: shipment_id)
+      if shipment_id.present?
+        item = Item.find(@item.id)
+        item.update(shipment_id: shipment_id)
+      else
+        redirect_to new_item_path
+      end
       redirect_to root_path
     else
       redirect_to new_item_path
