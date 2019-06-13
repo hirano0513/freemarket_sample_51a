@@ -3,25 +3,34 @@
   height: 50px;
   border-top: 1px solid #eee;
   box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  ul {
+      width: 1020px;
+      overflow: visible;
+      margin: 0 auto;
+      padding: 16px 0;
+      white-space: normal;
+    }
   .itemscoap{
-    display: flex;
-    line-height: 50px;
-    .title {
-      color: #333;
-      text-decoration: none;
-      font-size: 14px;
-      margin: 0 0 0 150px;
-    }
-    .fas.fa-chevron-right {
+    .breadcrumb {
       color: #333;
       font-size: 14px;
-      margin: 10px 10px;
-    }
-    .my-page {
-      font-size: 14px;
-      color: #333;
-      font-weight: 700;
-      text-decoration: none;
+      .current {
+        font-weight: bold;
+      }
+      a {
+        text-decoration: none;
+      }
+      a:visited {
+        color: #333;
+      }
+      a:hover {
+        text-decoration: underline;
+        opacity: 0.7;
+      }
+      .fa {
+        color: gray;
+        font-size: 12px;
+      }
     }
   }
 }
