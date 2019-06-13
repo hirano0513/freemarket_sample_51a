@@ -6,14 +6,14 @@ ja:
     item:
       size:
         under_XXS: XXS以下
-        XS(SS): XS(SS)
+        XS: XS(SS)
         S: S
         M: M
         L: L
-        XL(LL): XL(LL)
-        2XL(3L): 2XL(3L)
-        3XL(4L): 3XL(4L)
-        over_4XL(5L): 4XL(5L)以上
+        XL: XL(LL)
+        double_XL: 2XL(3L)
+        triple_XL: 3XL(4L)
+        over_4XL: 4XL(5L)以上
         FREESIZE: FREESIZE
       item_status:
         brand_new: 新品、未使用
