@@ -14,17 +14,7 @@
                   出品画像
                   %span.form-require 必須
                 %p 最大10枚までアップロードできます
-                .upload-dropbox__area
-                  .upload-container
-                    .uploads
-                      %ul
-                        -# 画像アップロード時のstyleです。jsで使用？
-                        -# %li.upload-box
-                        -#   %figure.upload-figure.landscape
-                        -#     %img=image_tag 'mercari_profile.png'
-                        -#   .upload-btn
-                        -#     =link_to '編集', '#', class: 'upload-edit'
-                        -#     =link_to '削除', '#'
+                #image-box.upload-dropbox-area
                 = f.label :images, class: "image-label" do
                   .image-form-box
                     %p ドラッグアンドドロップ
