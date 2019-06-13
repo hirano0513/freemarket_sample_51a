@@ -8,13 +8,13 @@ class ItemsController < ApplicationController
     @picup_category_items1 = Category.find(1).items.order("created_at DESC").limit(4)
 
     # カテゴリー新着2
-    @picup_category2 = Category.find(2).items.order("created_at DESC").limit(4)
+    @picup_category_items2 = Category.find(2).items.order("created_at DESC").limit(4)
 
     # カテゴリー新着3
-    @picup_category3 = Category.find(3).items.order("created_at DESC").limit(4)
+    @picup_category_items3 = Category.find(3).items.order("created_at DESC").limit(4)
 
     # カテゴリー新着4
-    @picup_category4 = Category.find(4).items.order("created_at DESC").limit(4)
+    @picup_category_items4 = Category.find(4).items.order("created_at DESC").limit(4)
 
     # # ブランド新着1
     # @picup_brand1 = Brand.find(1).items.order("created_at DESC").limit(4)
