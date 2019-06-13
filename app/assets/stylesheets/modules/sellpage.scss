@@ -195,6 +195,12 @@
             .form-group {
               font-size: 14px;
               font-weight: 600;
+              &.hidden{
+                display: none;
+              }
+              &.shipment-hidden{
+                display: none;
+              }
               .input-default {
                 width: 100%;
                 margin: 8px 0 0;
@@ -252,6 +258,9 @@
             -webkit-transform: translate(0, -50%);
             transform: translate(0, -50%);
           }
+          #item_size{
+            text-transform: uppercase;
+          }
         }
       }
       .form-group:first-child {
@@ -300,6 +309,10 @@
         }
         .l-right {
           float: right;
+        }
+        #profit{
+          font-size: 34px;
+          font-weight: 600;
         }
       }
     }

@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 2019_06_12_024130) do
     t.text "description", null: false
     t.integer "shipment_id"
     t.index ["name"], name: "index_items_on_name"
+    t.index ["shipment_id"], name: "fk_rails_1b5c4f46ae"
   end
 
   create_table "items_categories", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -132,6 +133,7 @@ ActiveRecord::Schema.define(version: 2019_06_12_024130) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "items", "shipments"
   add_foreign_key "personals", "users"
   add_foreign_key "sns_credentials", "users"
 end

@@ -15,7 +15,7 @@ class Item < ApplicationRecord
   has_many :categories, through: :items_categories
   accepts_nested_attributes_for :items_categories, allow_destroy: true
 
-  enum size: {"--": "", "XXS以下": 1, "XS(SS)": 2, "S": 3, "M": 4,"L": 5,"XL(LL)": 6, "2XL(3L)": 7, "3XL(4L)": 8, "4XL(5L)以上": 9,"FREESIZE": 10}, _suffix: true
+  enum size: {under_XXS: 1, XS: 2, S: 3, M: 4, L: 5, XL: 6, double_XL: 7, triple_XL: 8, over_4XL: 9, FREESIZE: 10}
 
-  enum item_status: {"---": "","新品、未使用": 1, "未使用に近い": 2,"目立った傷や汚れなし": 3,"やや傷や汚れあり": 4,"傷や汚れあり": 5, "全体的に状態が悪い": 6}, _suffix: true
+  enum item_status: {brand_new: 1, near_unused: 2,no_noticeable_scratches: 3, some_scratches: 4, scratches: 5, bad_condition: 6}
 end

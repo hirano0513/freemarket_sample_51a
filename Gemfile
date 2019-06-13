@@ -91,4 +91,4 @@ gem 'payjp'
 gem "jquery-rails"
 gem 'ancestry'
 gem 'gretel'
-
+gem 'enum_help'

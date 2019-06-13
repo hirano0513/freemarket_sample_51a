@@ -49,26 +49,21 @@
                     %label カテゴリー
                     %span.form-require 必須
                     %div
-                      .select-warp
-                        = f.fields_for :items_categories do |parent|
-                          = parent.collection_select :category_id,  @parents, :id, :name,{prompt: "---"}, class: "select-default"
-                          %i.fas.fa-angle-down
-                      .select-warp
-                        %select.select-default
-                          %option{value: ""} ---
-                        %i.fas.fa-angle-down
-                      .select-warp
-                        %select.select-default
-                          %option{value: ""} ---
-                        %i.fas.fa-angle-down
-                  .form-group
+                      = f.fields_for :items_categories do |parent|
+                        #parent-form-area
+                          .select-warp
+                            = parent.collection_select :category_id, @parents, :id, :name,{prompt: "---"}, class: "select-default", id: "parent-form"
+                            %i.fas.fa-angle-down
+                        #children-form-area
+                        #grandchild-form-area
+                  .form-group.hidden
                     %label サイズ
                     %span.form-require 必須
                     %div
                       .select-warp
-                        = f.select :size, Item.sizes.keys.to_a, {}, class: "select-default"
+                        = f.select :size, Item.sizes_i18n.keys.map{ |k| [Item.sizes_i18n[k], k]},{prompt: "---"}, class: "select-default"
                         %i.fas.fa-angle-down
-                  .form-group.brand--container
+                  .form-group.hidden.brand--container
                     = f.fields_for :brand do |brand|
                       = brand.label "ブランド"
                       %span.form-require-gray 任意
@@ -79,7 +74,7 @@
                     %span.form-require 必須
                     %div
                       .select-warp
-                        = f.select :item_status, Item.item_statuses.keys.to_a, {}, class: "select-default"
+                        = f.select :item_status, Item.item_statuses_i18n.keys.map{ |k| [Item.item_statuses_i18n[k], k]},{prompt: "---"}, class: "select-default"
                         %i.fas.fa-angle-down
               .sell-content
                 = f.fields_for :shipment do |shipment|
@@ -92,14 +87,14 @@
                       %span.form-require 必須
                       %div
                         .select-warp
-                          = shipment.select :cost_payer, Shipment.cost_payers.keys.to_a, {}, class: "select-default"
+                          = shipment.select :cost_payer, Shipment.cost_payers_i18n.keys.map{ |k| [Shipment.cost_payers_i18n[k], k]}, {prompt: "---"}, class: "select-default", id: "shipment-cost-form"
                           %i.fas.fa-angle-down
-                    .form-group
+                    .form-group.shipment-hidden
                       = shipment.label "配送の方法"
                       %span.form-require 必須
                       %div
                         .select-warp
-                          = shipment.select :method, Shipment.methods.keys.to_a, {}, class: "select-default"
+                          = shipment.select :method, Shipment.methods_i18n.keys.map{ |k| [Shipment.methods_i18n[k], k]}, {prompt: "---"}, class: "select-default"
                           %i.fas.fa-angle-down
                     .form-group
                       = shipment.label "発送元の地域"
@@ -113,7 +108,7 @@
                       %span.form-require 必須
                       %div
                         .select-warp
-                          = shipment.select :days, Shipment.days.keys.to_a, {}, class: "select-default"
+                          = shipment.select :days, Shipment.days_i18n.keys.map{ |k| [Shipment.days_i18n[k], k]}, {prompt: "---"}, class: "select-default"
                           %i.fas.fa-angle-down
             .sell-content
               %h3.sell-sub-head 販売価格(300〜9,999,999)
@@ -129,15 +124,15 @@
                       .l-right.sell-price-input
                         ¥
                         %div
-                          = f.text_field :price, placeholder: "例）300", value: "", class: "input-default input-price"
+                          = f.text_field :price, placeholder: "例）300", value: "", class: "input-default input-price", id: "price-input-box"
                   %li.clearfix
                     .l-left.commission
                       販売手数料 (10%)
-                    .l-right.commission -
+                    #commission.l-right -
                   %li.clearfix
                     .l-left.profit
                       販売利益
-                    .l-right.profit -
+                    #profit.l-right -
             .sell-content.sell-btn-box
               %div
                 %p

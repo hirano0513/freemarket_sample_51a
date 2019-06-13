@@ -42,6 +42,13 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save!
+      shipment_id = Shipment.find(@item.id).id
+      if shipment_id.present?
+        item = Item.find(@item.id)
+        item.update(shipment_id: shipment_id)
+      else
+        redirect_to new_item_path
+      end
       redirect_to root_path
     else
       redirect_to new_item_path
@@ -54,6 +61,19 @@ class ItemsController < ApplicationController
   def destroy    
     @item.destroy
     redirect_to root_path, notice: '商品を削除しました'
+  end
+
+  def search
+    respond_to do |format|
+      format.html
+      format.json do
+        if params[:parent_id]
+          @children = Category.find(params[:parent_id]).children
+        else
+          @grand_children = Category.find(params[:child_id]).children
+        end
+      end
+    end
   end
 
   private

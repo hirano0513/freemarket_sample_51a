@@ -26,6 +26,10 @@ Rails.application.routes.draw do
   end
 
   resources :items, only: [:index, :new, :create, :show, :destroy] do
+    collection do
+      get :search
+    end
+    
     resources :purchase, only: [:index] do
       collection do
         get 'index', to: 'purchase#index'
@@ -34,6 +38,7 @@ Rails.application.routes.draw do
       end
     end
   end
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root  'items#index'
 end
