@@ -14,7 +14,7 @@ $(function(){
                 </figure>
                 <div class="upload-btn">
                   <a class="upload-edit" href="#">編集</a>
-                  <a class="upload-destroy" href="javascript:void(0)">削除</a>
+                  <a class="upload-destroy" href="">削除</a>
                 </div>
               </li>`
     return html;
