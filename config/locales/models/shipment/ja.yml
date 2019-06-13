@@ -1,0 +1,23 @@
+ja:
+  activerecord:
+    models:
+      shipment: 配送方法
+  enums:
+    shipment:
+      cost_payer:
+        postage_included: 送料込み(出品者負担)
+        cash_on_delivery: 着払い(購入者負担)
+      method:
+        undecided: 未定
+        easy_courier_service: らくらくメルカリ便
+        postal_mail: ゆうメール
+        letter: レターパック
+        regular_mail: 普通郵便(定形、定型外)
+        Kuroneko_Yamato: クロネコヤマト
+        postal_pack: ゆうパック
+        Click_Pocket: クリックポケット
+        postal_packet: ゆうパケット
+      days:
+        1_to_2_days: 1〜2日で発送
+        2_to_3_days: 2〜3日で発送
+        4_to_7_days: 4〜7日で発送
