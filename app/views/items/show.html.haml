@@ -1,6 +1,7 @@
 = render 'layouts/header'
 
 .product-details
+  - breadcrumb :item, @item
   = render 'render/bread-crumbs'
   .default-container
     .item-box-container
@@ -35,15 +36,15 @@
             .tr
               .th 商品の状態
               .td 
-                = @item.item_status
+                = @item.item_status_i18n
             .tr
               .th 配送料の負担
               .td
-                = @item.shipment.cost_payer
+                = @item.shipment.cost_payer_i18n
             .tr
               .th 配送の方法
               .td
-                = @item.shipment.method
+                = @item.shipment.method_i18n
             .tr
               .th 配送元地域
               .td
@@ -51,7 +52,7 @@
             .tr
               .th 発送日の目安
               .td
-                = @item.shipment.days
+                = @item.shipment.days_i18n
       .item-price-box
         %span.item-price
           ￥

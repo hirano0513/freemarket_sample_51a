@@ -2,7 +2,7 @@ $(function(){
   function buildChild(){
     // 2つ目のセレクトボックスの外枠
     var html = `<div class="select-warp">
-    <select class="select-default" id="children-form" name="item[items_categories_attributes][0][category_id]"><option value="">---</option>
+    <select class="select-default" id="children-form" name="item[items_categories_attributes][1][category_id]"><option value="">---</option>
     </select>
     <i class="fas fa-angle-down"></i>
     </div>`
@@ -16,7 +16,7 @@ $(function(){
   function buildGrandChild(){
     // 3つ目のセレクトボックスの外枠
     var html = `<div class="select-warp">
-    <select class="select-default" id="grand-children-form" name="item[items_categories_attributes][0][category_id]"><option value="">---</option>
+    <select class="select-default" id="grand-children-form" name="item[items_categories_attributes][2][category_id]"><option value="">---</option>
     </select>
     <i class="fas fa-angle-down"></i>
     </div>`

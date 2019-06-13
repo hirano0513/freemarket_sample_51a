@@ -12,30 +12,30 @@
           .more
             = link_to 'すべての商品を見る','#', class: 'menu-btn'
 
-    - if (@picup_category2.length != 0)
+    - if (@picup_category_items2.length != 0)
       %section.common-container.clearfix
         %h3.common-container__title
-          = link_to "#{@picup_category2[0].categories[0].name} 新着アイテム",'#', class: 'btn'
+          = link_to "#{@picup_category_items2[0].categories[0].name} 新着アイテム",'#', class: 'btn'
           .wrapper.clearfix
-            = render partial: 'pickup', collection: @picup_category2, as: :item
+            = render partial: 'pickup', collection: @picup_category_items2, as: :item
           .more
             = link_to 'すべての商品を見る','#', class: 'menu-btn'
 
-    - if (@picup_category3.length != 0)
+    - if (@picup_category_items3.length != 0)
       %section.common-container.clearfix
         %h3.common-container__title
-          = link_to "#{@picup_category3[0].categories[0].name} 新着アイテム",'#', class: 'btn'
+          = link_to "#{@picup_category_items3[0].categories[0].name} 新着アイテム",'#', class: 'btn'
           .wrapper.clearfix
-            = render partial: 'pickup', collection: @picup_category3, as: :item
+            = render partial: 'pickup', collection: @picup_category_items3, as: :item
           .more
             = link_to 'すべての商品を見る','#', class: 'menu-btn'
 
-    - if (@picup_category4.length != 0)
+    - if (@picup_category_items4.length != 0)
       %section.common-container.clearfix
         %h3.common-container__title
-          = link_to "#{@picup_category4[0].categories[0].name} 新着アイテム",'#', class: 'btn'
+          = link_to "#{@picup_category_items4[0].categories[0].name} 新着アイテム",'#', class: 'btn'
           .wrapper.clearfix
-            = render partial: 'pickup', collection: @picup_category4, as: :item
+            = render partial: 'pickup', collection: @picup_category_items4, as: :item
           .more
             = link_to 'すべての商品を見る','#', class: 'menu-btn'
 
