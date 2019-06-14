@@ -36,7 +36,6 @@ class ItemsController < ApplicationController
     @parents = Category.all.order("id ASC").limit(13)
     @item.build_shipment
     @item.build_brand
-    @item.items_categories.build
   end
 
   def create
@@ -95,7 +94,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :size, :description, :price, :item_status, shipment_attributes: [:id, :cost_payer, :method, :days, :prefecture_id],images: [], brand_attributes: [:id, :name], items_categories_attributes: [:id,:category_id]).merge(seller_id: current_user.id)
+    params.require(:item).permit(:name, :size, :description, :price, :item_status, shipment_attributes: [:id, :cost_payer, :method, :days, :prefecture_id],images: [], brand_attributes: [:id, :name], :category_ids => []).merge(seller_id: current_user.id)
   end
 
   def move_to_index
