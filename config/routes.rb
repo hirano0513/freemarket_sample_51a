@@ -25,7 +25,7 @@ Rails.application.routes.draw do
     resources :personals, only: [:show]
   end
 
-  resources :items, only: [:index, :new, :create, :show, :destroy] do
+  resources :items, only: [:index, :new, :create, :show, :destroy, :edit, :update] do
     collection do
       get :search
     end
