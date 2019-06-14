@@ -24,6 +24,7 @@ class PurchaseController < ApplicationController
     )
     if @item.update!(buyer_id: current_user.id)
       redirect_to root_path
+      flash[:notice] = "購入が完了しました。"
     else
       flash[:notice] = "エラーが発生しました。"
       redirect_to root_parh
