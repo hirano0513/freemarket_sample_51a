@@ -90,7 +90,7 @@
                       %span.form-require 必須
                       %div
                         .select-warp
-                          = shipment.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "--"}, {class: "select-default"}
+                          = shipment.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "---"}, {class: "select-default"}
                           %i.fas.fa-angle-down
                     .form-group
                       = shipment.label "発送までの日数"
