@@ -1,7 +1,7 @@
 $(function(){
   function buildChild(){
     // 2つ目のセレクトボックスの外枠
-    var html = `<div class="select-warp">
+    var html = `<div class="select-warp child-box">
     <select class="select-default" id="children-form" name="item[items_categories_attributes][1][category_id]"><option value="">---</option>
     </select>
     <i class="fas fa-angle-down"></i>
@@ -15,7 +15,7 @@ $(function(){
   }
   function buildGrandChild(){
     // 3つ目のセレクトボックスの外枠
-    var html = `<div class="select-warp">
+    var html = `<div class="select-warp grandchild-box">
     <select class="select-default" id="grand-children-form" name="item[items_categories_attributes][2][category_id]"><option value="">---</option>
     </select>
     <i class="fas fa-angle-down"></i>
@@ -27,9 +27,14 @@ $(function(){
     var GrandChildOption = `<option value="${grandchild.id}">${grandchild.name}</option>`
     return GrandChildOption;
   }
-  $("#parent-form").one("change",function(){
+  $("#parent-form").on("change",function(){
     // 1つ目のセレクトボックスのidを取得してそのidをAjax通信でコントローラーへ送る
     var parentValue = document.getElementById("parent-form").value;
+    $(".child-box").remove();
+    $(".grandchild-box").remove();
+    $('.hidden').css({
+      'display': 'none'
+    });
     $.ajax({
       url: '/items/search',
       type: "GET",
@@ -50,9 +55,13 @@ $(function(){
       console.log("失敗");
     });
   })
-  $(document).one("change", "#children-form",function(){
+  $(document).on("change", "#children-form",function(){
     // 2つ目のセレクトボックスのidを取得してそのidをAjax通信でコントローラーへ送る
     var childrenValue = document.getElementById("children-form").value;
+    $(".grandchild-box").remove();
+    $('.hidden').css({
+      'display': 'none'
+    });
     $.ajax({
       url: '/items/search',
       type: "GET",
@@ -73,7 +82,7 @@ $(function(){
       console.log("失敗");
     });
   });
-  $(document).one("change", "#grand-children-form",function(){
+  $(document).on("change", "#grand-children-form",function(){
     // 3つ目のセレクトボックスの値が変わった時、ブランドとサイズの入力ボックスを表示させる
     $('.hidden').css({
       'display': 'block'
