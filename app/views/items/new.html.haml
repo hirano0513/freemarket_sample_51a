@@ -39,13 +39,12 @@
                     %label カテゴリー
                     %span.form-require 必須
                     %div
-                      = f.fields_for :items_categories do |parent|
-                        #parent-form-area
-                          .select-warp
-                            = parent.collection_select :category_id, @parents, :id, :name,{prompt: "---"}, class: "select-default", id: "parent-form"
-                            %i.fas.fa-angle-down
-                        #children-form-area
-                        #grandchild-form-area
+                      #parent-form-area
+                        .select-warp
+                          = f.collection_select :category_ids, @parents, :id, :name,{prompt: "---"}, class: "select-default", id: "parent-form", name: 'item[category_ids][]'
+                          %i.fas.fa-angle-down
+                      #children-form-area
+                      #grandchild-form-area
                   .form-group.hidden
                     %label サイズ
                     %span.form-require 必須

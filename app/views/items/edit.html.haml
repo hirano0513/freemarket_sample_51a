@@ -50,15 +50,15 @@
                     %div
                       #parent-form-area
                         .select-warp
-                          = f.collection_select :category_ids, @parents,:id, :name,{prompt: "---"},class: "select-default", id: "parent-form", selected: @item.categories[0]
+                          = f.collection_select :category_ids, @parents,:id, :name,{prompt: "---"},class: "select-default", id: "parent-form", selected: @item.categories[0], name: 'item[category_ids][]'
                           %i.fas.fa-angle-down
                       #children-form-area
                         .select-warp.child-box
-                          = f.collection_select :category_ids,@children, :id, :name,{prompt: "---"}, class: "select-default", id: "parent-form", selected: @item.category_ids[1]
+                          = f.collection_select :category_ids,@children, :id, :name,{prompt: "---"}, class: "select-default", id: "parent-form", selected: @item.category_ids[1], name: 'item[category_ids][]'
                           %i.fas.fa-angle-down
                       #grandchild-form-area
                         .select-warp.grandchild-box
-                          = f.collection_select :category_ids,@grand_children, :id, :name,{prompt: "---"}, class: "select-default", id: "parent-form", selected: @item.category_ids[2]
+                          = f.collection_select :category_ids,@grand_children, :id, :name,{prompt: "---"}, class: "select-default", id: "parent-form", selected: @item.category_ids[2], name: 'item[category_ids][]'
                           %i.fas.fa-angle-down
                   .form-group
                     %label サイズ
