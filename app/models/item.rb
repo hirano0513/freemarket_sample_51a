@@ -15,7 +15,6 @@ class Item < ApplicationRecord
   accepts_nested_attributes_for :brand
   has_many :items_categories, dependent: :destroy
   has_many :categories, through: :items_categories
-  accepts_nested_attributes_for :items_categories, allow_destroy: true
 
   enum size: {under_XXS: 1, XS: 2, S: 3, M: 4, L: 5, XL: 6, double_XL: 7, triple_XL: 8, over_4XL: 9, FREESIZE: 10}
 
