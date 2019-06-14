@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
 
   before_action :move_to_index, except: :index
-  before_action :set_item, only: [:show, :destroy]
+  before_action :set_item, only: [:show, :destroy, :edit, :update]
 
   def index
     # カテゴリー新着1
@@ -41,7 +41,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    if @item.save!
+    if @item.save
       shipment_id = Shipment.find(@item.id).id
       if shipment_id.present?
         item = Item.find(@item.id)
@@ -61,6 +61,22 @@ class ItemsController < ApplicationController
   def destroy    
     @item.destroy
     redirect_to root_path, notice: '商品を削除しました'
+  end
+
+  def edit
+    @parents = Category.all.order("id ASC").limit(13)
+    @children = @item.categories[0].children
+    @grand_children = @item.categories[1].children
+  end
+
+  def update
+    if @item.seller_id == current_user.id
+      if @item.update(item_params)
+        redirect_to item_path
+      else
+        redirect_to edit_item_path
+      end
+    end
   end
 
   def search
