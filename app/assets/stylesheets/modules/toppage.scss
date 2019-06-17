@@ -40,6 +40,38 @@
             overflow: hidden;
             position: relative;
           }
+          .item-soldout__badge::after {
+            @media screen and (min-width: 768px) {
+              border-width: 100px 100px 0 0;
+            }
+            border-width: 65px 65px 0 0;
+            border-color: #ea352d transparent transparent transparent;
+            display: block;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            width: 0;
+            height: 0;
+            border-style: solid;
+          }
+          .item-soldout__badge>div {
+            @media screen and (min-width: 768px) {
+              top: 20px;
+              font-size: 22px;
+            }
+            top: 14px;
+            font-size: 16px;
+            position: absolute;
+            left: 0;
+            z-index: 2;
+            color: #fff;
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            letter-spacing: 2px;
+            font-weight: 600;
+            }
           .content {
             padding: 16px;
             max-height: 110px;
