@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   get 'purchase/index'
   get 'purchase/done'
-  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks',
-                registrations: 'users/registrations', sessions: 'users/sessions'}
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks', registrations: 'users/registrations', sessions: 'users/sessions'}
 
   devise_scope :user do
     get 'users/sign_up/index', to: 'users/registrations#index'
