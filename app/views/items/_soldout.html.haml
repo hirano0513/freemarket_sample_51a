@@ -1,0 +1,17 @@
+%section.section
+  = link_to item_path(item.id) do
+    %figure.section__image
+      = image_tag @item.images[0].variant(combine_options:{resize:"213x213^",crop:"213x213+0+0",gravity: :center}).processed, class: 'owl-dot'
+      -if (@item.buyer_id != nil)
+        %figcaption
+          .item-soldout__badge
+            %div SOLD
+    -# .content
+    -#   %h3.content__title.font-2 #{item.name}
+    -#   .item-box
+    -#     .item-box__price.font-5 ¥#{item.price.to_s(:delimited, delimiter: ',')}
+    -#     .item-box__mask.font-2
+    -#       %i.far.fa-heart
+    -#       %span #{item.like}
+    -#   %p.content__lead (税込)
+
