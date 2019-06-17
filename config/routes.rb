@@ -27,7 +27,7 @@ Rails.application.routes.draw do
 
   resources :items, only: [:index, :new, :create, :show, :destroy, :edit, :update] do
     collection do
-      get :search
+      get :category_search
     end
     
     resources :purchase, only: [:index] do
