@@ -16,7 +16,7 @@
             %img.user-profile__icon
               =image_tag 'https://static.mercdn.net/images/member_photo_noimage_thumb.png', class: 'usericon'
             .user-profile__name
-              =link_to 'ユーザーネーム', '#', class: 'username'
+              =link_to current_user.nickname, '#', class: 'username'
             .user-profile__number
               評価　131　出品数　140
           .mypage-list
