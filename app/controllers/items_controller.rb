@@ -78,7 +78,7 @@ class ItemsController < ApplicationController
     end
   end
 
-  def search
+  def category_search
     respond_to do |format|
       format.html
       format.json do

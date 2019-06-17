@@ -5,6 +5,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def index
   end
 
+  # GET /resource/sign_up
+  def new
+    @user = User.new
+    @user.build_personal
+  end
+
   def sms_auth
     @sms = "phone-number"
   end
@@ -28,14 +34,20 @@ class Users::RegistrationsController < Devise::RegistrationsController
       super
       sns = SnsCredential.update(user_id:  @user.id)
     else #email登録なら
-      super
+      @user = User.new(personal_params)
+      if @user.save!
+        sign_in @user
+        redirect_to users_sms_auth_path
+      else
+        redirect_to new_user_registration_path
+      end
     end
   end
 
-  # GET /resource/sign_up
-  # def new
-  #   super
-  # end
+  private
+  def personal_params
+    params.require(:user).permit(:nickname, :email, :password, :password_confirmation, personal_attributes: [:last_name, :first_name,:kana_first_name, :kana_last_name, :user_id])
+  end
 
   # POST /resource
   # def create

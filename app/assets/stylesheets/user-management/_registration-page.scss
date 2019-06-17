@@ -46,6 +46,11 @@
               width: 100%;
               margin: 8px 0 0;
             }
+            &.actions{
+              a {
+                text-decoration: none;
+              }
+            }
             .select-wrap{
               margin: 8px 0 0;
               position: relative;
@@ -56,6 +61,9 @@
             }
             &.text-right{
               text-align: right;
+              a {
+                @include info-text;
+              }
             }
             .entry-notes{
               font-size: 16px;
@@ -69,14 +77,14 @@
                 &.text-center{
                   text-align: center;
                 }
+                a {
+                  @include info-text;
+                }
               }
             }
             p{
               margin: 8px 0 0;
               line-height: 1.5;
-            }
-            a {
-              @include info-text;
             }
             &.finish-registration{
               text-align: center;
@@ -141,6 +149,11 @@
                 @include arrow-down;
               }
             }
+            &.actions{
+              a {
+                text-decoration: none;
+              }
+            }
             &.text-right{
               text-align: right;
             }
@@ -156,14 +169,14 @@
                 &.text-center{
                   text-align: center;
                 }
+                a {
+                  @include info-text;
+                }
               }
             }
             p{
               margin: 8px 0 0;
               line-height: 1.5;
-            }
-            a {
-              @include info-text;
             }
             &.finish-registration{
               text-align: center;

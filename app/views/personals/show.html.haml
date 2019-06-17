@@ -9,7 +9,7 @@
         %h2.identification-container__head
           本人情報の登録
         .identification-inner
-          = form_for @personals do |f|
+          = form_for @personals, url: user_personal_path do |f|
             %ul
               %p お客さまの本人情報をご登録ください。
               %br
@@ -19,37 +19,38 @@
                 %i.fas.fa-chevron-right
               %li
                 = f.label :"お名前"
-                %p みほ三郎
+                %p
+                = current_user.personal.name
               %li
                 = f.label :"お名前カナ"
-                %p ミホサブロウ
+                %p
+                = current_user.personal.kana_name
               %li
                 = f.label :"生年月日"
                 %p 2019/06/01
               %li
                 = f.label :"郵便番号"
                 %span.form-require-gray 任意
-                = f.text_field :name,placeholder: "例) 123-4567",class: "input-default"
+                = f.text_field :name,placeholder: "例) 123-4567",class: "input-default", value: ""
               %li
                 = f.label :"都道府県"
                 %span.form-require-gray 任意
                 .prefecture-info
                   .select-wrap
-                    .input-default
-                      北海道
-                      %i.fas.fa-angle-down
+                    = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "---"}, {class: "input-default"}
+                    %i.fas.fa-angle-down
               %li
                 = f.label :"市区町村"
                 %span.form-require-gray 任意
-                = f.text_field :name,placeholder: "例) 横浜市緑区",class: "input-default"
+                = f.text_field :name,placeholder: "例) 横浜市緑区",class: "input-default", value: ""
               %li
                 = f.label :"番地"
                 %span.form-require-gray 任意
-                = f.text_field :name,placeholder: "例) 青山1-1-1",class: "input-default"
+                = f.text_field :name,placeholder: "例) 青山1-1-1",class: "input-default", value: ""
               %li
                 = f.label :"建物名"
                 %span.form-require-gray 任意
-                = f.text_field :name,placeholder: "例) 柳ビル103",class: "input-default"
+                = f.text_field :name,placeholder: "例) 柳ビル103",class: "input-default", value: ""
               %li.actions
                 = f.submit "登録する", class:"btn-default btn-red"
               %li.text-right

@@ -36,7 +36,7 @@ $(function(){
       'display': 'none'
     });
     $.ajax({
-      url: '/items/search',
+      url: '/items/category_search',
       type: "GET",
       data: {
         parent_id: parentValue
@@ -63,7 +63,7 @@ $(function(){
       'display': 'none'
     });
     $.ajax({
-      url: '/items/search',
+      url: '/items/category_search',
       type: "GET",
       data: {
         child_id: childrenValue
