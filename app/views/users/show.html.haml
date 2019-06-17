@@ -1,7 +1,8 @@
 .user_mypage
   .body
     = render "layouts/header"
-    = render 'render/bread-crumbs'
+    - breadcrumb :user
+    = render "render/bread-crumbs"
     .default-container
 
       = render 'render/sidelist'

@@ -21,21 +21,24 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :purchase, only: [:index] do
-    collection do
-      get 'index', to: 'purchase#index'
-      post 'pay', to: 'purchase#pay'
-      get 'done', to: 'purchase#done'
-    end
-  end
-
   resources :users, only: [:show, :edit, :update] do
     resources :personals, only: [:show]
   end
 
-  resources :items, only: [:index, :new, :create, :show, :destroy] do
-    resources :buys, only: [:index]
+  resources :items, only: [:index, :new, :create, :show, :destroy, :edit, :update] do
+    collection do
+      get :search
+    end
+    
+    resources :purchase, only: [:index] do
+      collection do
+        get 'index', to: 'purchase#index'
+        post 'pay', to: 'purchase#pay'
+        get 'done', to: 'purchase#done'
+      end
+    end
   end
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root  'items#index'
 end

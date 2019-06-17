@@ -2,6 +2,8 @@ class Item < ApplicationRecord
   validates :name, length: {maximum: 40}
   validates :description, length: {maximum: 1000}
   validates :price, numericality: {only_integer: true,greater_than: 300, less_than: 9999999}
+  validates :images, length: {in: 1..10}
+  validate :image_type
   
   has_many_attached :images
   has_one :shipment, dependent: :destroy
@@ -13,9 +15,19 @@ class Item < ApplicationRecord
   accepts_nested_attributes_for :brand
   has_many :items_categories, dependent: :destroy
   has_many :categories, through: :items_categories
-  accepts_nested_attributes_for :items_categories, allow_destroy: true
 
-  enum size: {"--": "", "XXS以下": 1, "XS(SS)": 2, "S": 3, "M": 4,"L": 5,"XL(LL)": 6, "2XL(3L)": 7, "3XL(4L)": 8, "4XL(5L)以上": 9,"FREESIZE": 10}, _suffix: true
+  enum size: {under_XXS: 1, XS: 2, S: 3, M: 4, L: 5, XL: 6, double_XL: 7, triple_XL: 8, over_4XL: 9, FREESIZE: 10}
 
-  enum item_status: {"---": "","新品、未使用": 1, "未使用に近い": 2,"目立った傷や汚れなし": 3,"やや傷や汚れあり": 4,"傷や汚れあり": 5, "全体的に状態が悪い": 6}, _suffix: true
+  enum item_status: {brand_new: 1, near_unused: 2,no_noticeable_scratches: 3, some_scratches: 4, scratches: 5, bad_condition: 6}
+
+  private
+
+    def image_type
+      if images.each do |image|
+        if !image.content_type.in?(%('image/jpec image/png'))
+          errors.add(:images, 'needs to be a JPEG or PNG')
+        end
+      end
+    end
+  end
 end

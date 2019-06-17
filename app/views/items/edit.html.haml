@@ -14,8 +14,17 @@
                   出品画像
                   %span.form-require 必須
                 %p 最大10枚までアップロードできます
-                #image-box.upload-dropbox-area
-                = f.label :images, class: "image-label" do
+                #image-box.upload-dropbox-area.image-1
+                  .upload-container
+                    .uploads
+                      %ul
+                        %li.upload-box
+                          %figure.upload-figure.landscape
+                            = image_tag @item.images[0]
+                          .upload-btn
+                            =link_to '編集', '#', class: 'upload-edit'
+                            =link_to '削除', '', class: 'upload-destroy'
+                = f.label :images, class: "image-label item-1" do
                   .image-form-box
                     %p ドラッグアンドドロップ
                     %p またはクリックしてファイルをアップロード
@@ -27,7 +36,7 @@
                   = f.label "商品名"
                   %span.form-require 必須
                   %div
-                    = f.text_field :name, placeholder: "商品名（必須 40文字まで)", value: "", class: "input-default"
+                    = f.text_field :name, placeholder: "商品名（必須 40文字まで)", class: "input-default"
                 .form-group
                   = f.label "商品の説明"
                   %span.form-require 必須
@@ -41,18 +50,24 @@
                     %div
                       #parent-form-area
                         .select-warp
-                          = f.collection_select :category_ids, @parents, :id, :name,{prompt: "---"}, class: "select-default", id: "parent-form", name: 'item[category_ids][]'
+                          = f.collection_select :category_ids, @parents,:id, :name,{prompt: "---"},class: "select-default", id: "parent-form", selected: @item.categories[0], name: 'item[category_ids][]'
                           %i.fas.fa-angle-down
                       #children-form-area
+                        .select-warp.child-box
+                          = f.collection_select :category_ids,@children, :id, :name,{prompt: "---"}, class: "select-default", id: "parent-form", selected: @item.category_ids[1], name: 'item[category_ids][]'
+                          %i.fas.fa-angle-down
                       #grandchild-form-area
-                  .form-group.hidden
+                        .select-warp.grandchild-box
+                          = f.collection_select :category_ids,@grand_children, :id, :name,{prompt: "---"}, class: "select-default", id: "parent-form", selected: @item.category_ids[2], name: 'item[category_ids][]'
+                          %i.fas.fa-angle-down
+                  .form-group
                     %label サイズ
                     %span.form-require 必須
                     %div
                       .select-warp
                         = f.select :size, Item.sizes_i18n.keys.map{ |k| [Item.sizes_i18n[k], k]},{prompt: "---"}, class: "select-default"
                         %i.fas.fa-angle-down
-                  .form-group.hidden.brand--container
+                  .form-group.brand--container
                     = f.fields_for :brand do |brand|
                       = brand.label "ブランド"
                       %span.form-require-gray 任意
@@ -78,7 +93,7 @@
                         .select-warp
                           = shipment.select :cost_payer, Shipment.cost_payers_i18n.keys.map{ |k| [Shipment.cost_payers_i18n[k], k]}, {prompt: "---"}, class: "select-default", id: "shipment-cost-form"
                           %i.fas.fa-angle-down
-                    .form-group.shipment-hidden
+                    .form-group
                       = shipment.label "配送の方法"
                       %span.form-require 必須
                       %div
@@ -90,7 +105,7 @@
                       %span.form-require 必須
                       %div
                         .select-warp
-                          = shipment.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "---"}, {class: "select-default"}
+                          = shipment.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "--"}, {class: "select-default"}
                           %i.fas.fa-angle-down
                     .form-group
                       = shipment.label "発送までの日数"
@@ -113,7 +128,7 @@
                       .l-right.sell-price-input
                         ¥
                         %div
-                          = f.text_field :price, placeholder: "例）300", value: "", class: "input-default input-price", id: "price-input-box"
+                          = f.text_field :price, placeholder: "例）300", selected: @item.price.to_s, class: "input-default input-price", id: "price-input-box"
                   %li.clearfix
                     .l-left.commission
                       販売手数料 (10%)
@@ -137,6 +152,6 @@
                   また、出品をもちまして
                   = link_to "加盟店契約", "/", class: "caution"
                   に同意したことになります。
-              %button.btn-default.btn-red{type: "submit"} 出品する
-              = link_to "もどる", "/", class: "btn-default btn-gray"
+              %button.btn-default.btn-red{type: "submit"} 変更する
+              = link_to "キャンセル", item_path, class: "btn-default btn-gray"
   = render "layouts/entry-footer"

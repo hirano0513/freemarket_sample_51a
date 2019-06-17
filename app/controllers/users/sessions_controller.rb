@@ -14,7 +14,6 @@ class Users::SessionsController < Devise::SessionsController
   # end
 
   def log_out
-    @current_user = "3"
   end
 
   # DELETE /resource/sign_out
