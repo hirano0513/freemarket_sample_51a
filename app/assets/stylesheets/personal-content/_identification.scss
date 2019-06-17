@@ -64,6 +64,14 @@
                 i{
                   @include arrow-down;
                 }
+                .input-default{
+                  outline: 0;
+                  -webkit-appearance: none;
+                  padding: 0px 16px;
+                }
+                .fa-angle-down{
+                  top: 60%;
+                }
               }
               &.text-right {
                 text-align: right;
