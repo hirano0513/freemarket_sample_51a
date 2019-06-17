@@ -1,20 +1,22 @@
 .user_profile_edit
   .body
     = render "layouts/header"
-    = render 'render/bread-crumbs'
+    - breadcrumb :edit
+    = render "render/bread-crumbs"
     .default-container
       = render "render/sidelist"
       .container
         .content
-          プロフィール
-          .user-profile
-            %img.user-profile__icon
-              =image_tag 'https://static.mercdn.net/images/member_photo_noimage_thumb.png', class: 'usericon'
-            .user-profile__name
-              %input{type: "text", name: "nickname", class: "input-default", value: "#{current_user.nickname}"}
-          .user-profile-text
-            %textarea{type: "textarea", name: "profile", class: "textarea-default",placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪"}
-            .btn-default.btn-red
-              変更する
+          %h2 プロフィール
+          = form_with(model: @user, local: true) do |f|
+            .user-profile
+              %img.user-profile__icon
+                =image_tag 'https://static.mercdn.net/images/member_photo_noimage_thumb.png', class: 'usericon'
+              .user-profile__name
+                = f.text_field  :nickname, class: "input-default", value: "#{current_user.nickname}"
+            .user-profile-text
+              = f.text_area :profile, class: "textarea-default",placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪"
+              = f.submit value: "変更する", class: "btn-default btn-red"
+              
   = render "layouts/footer"
   = render 'render/footer-sell-btn'
