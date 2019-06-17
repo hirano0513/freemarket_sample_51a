@@ -35,10 +35,10 @@ class Personal < ApplicationRecord
   # DBのカラムはnameのため、last_nameとfirst_nameを
   # バリデーションの前に結合させて、設定しておく必要がある
   def set_name
-    self.name = [@last_name, @first_name].join(" ")
+    self.name = [@first_name, @last_name].join(" ")
   end
 
   def set_kana_name
-    self.kana_name = [@kana_last_name, @kana_first_name].join(" ")
+    self.kana_name = [@kana_first_name, @kana_last_name].join(" ")
   end
 end
