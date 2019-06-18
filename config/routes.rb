@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'search/index'
   get 'purchase/index'
   get 'purchase/done'
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks', registrations: 'users/registrations', sessions: 'users/sessions'}
