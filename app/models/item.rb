@@ -24,8 +24,8 @@ class Item < ApplicationRecord
 
     def image_type
       if images.each do |image|
-        if !image.content_type.in?(%('image/jpec image/png'))
-          errors.add(:images, 'needs to be a JPEG or PNG')
+        if !image.content_type.in?(%('image/jpg image/jpeg image/png'))
+          errors.add(:images, 'needs to be a JPG or JPEG or PNG')
         end
       end
     end
