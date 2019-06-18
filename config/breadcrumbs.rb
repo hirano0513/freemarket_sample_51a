@@ -30,3 +30,8 @@ end
 crumb :item do |item|
   link "#{item.name}"
 end
+
+# 検索用
+crumb :search do |search_word|
+  link "#{search_word}"
+end
