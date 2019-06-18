@@ -8,7 +8,7 @@
     - if (@item.length != 0)
       %section.common-container.clearfix
         %h3.common-container__title
-          = link_to "検索結果",'#', class: 'btn'
+          %p 「#{@search_word}」の検索結果
           .wrapper.clearfix
             = render partial: 'items/pickup', collection: @item, as: :item
           .more
