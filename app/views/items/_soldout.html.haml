@@ -1,9 +1,6 @@
 %section.section
   = link_to item_path(item.id) do
-    %figure.section__image
-      = image_tag @item.images[0].variant(combine_options:{resize:"213x213^",crop:"213x213+0+0",gravity: :center}).processed, class: 'owl-dot'
-      -if (@item.buyer_id != nil)
-        %figcaption
-          .item-soldout__badge
-            %div SOLD
-            
+    -if (@item.buyer_id != nil)
+      %figcaption
+        .item-soldout__badge
+          %div SOLD
