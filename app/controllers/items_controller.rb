@@ -70,6 +70,7 @@ class ItemsController < ApplicationController
 
   def update
     if @item.seller_id == current_user.id
+      @item.images.detach if params[:item][:images] != nil
       if @item.update(item_params)
         redirect_to item_path
       else
