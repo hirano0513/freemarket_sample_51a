@@ -35,7 +35,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       sns = SnsCredential.update(user_id:  @user.id)
     else #email登録なら
       @user = User.new(personal_params)
-      if @user.save!
+      if @user.save
         sign_in @user
         redirect_to users_sms_auth_path
       else
