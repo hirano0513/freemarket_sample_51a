@@ -16,9 +16,10 @@ class PurchaseController < ApplicationController
 
   def pay
     card = current_user.credit_card
+    @item = Item.find(params[:item_id])
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     Payjp::Charge.create(
-      :amount => 13500,
+      :amount => @item.price,
       :customer => card.customer_id,
       :currency => 'jpy',
     )

@@ -22,23 +22,23 @@
                 .buy-price-cell-second
                   %span.pay ¥#{@item.price.to_s(:delimited, delimiter: ',')}
             - if current_user.credit_card.blank?
-              %p.error-text この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
+              %p.error-text 
               %ul.buy-accordion
                 %li.accordion-parent
                   .accordion-toggle 購入する
             - else 
-            = form_tag(action: :pay, method: :post) do
-              %button 購入する
-            .app-google
-              = link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?3547997460", alt: ""),"https://itunes.apple.com/jp/app/id667861049?l=ja&amp;mt=8"
-              = link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?3547997460", alt: ""),"https://play.google.com/store/apps/details?id=com.kouzoh.mercari&amp;hl=ja"
+              = form_tag(action: :pay, method: :post) do
+                %button 購入する
+              .app-google
+                = link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?3547997460", alt: ""),"https://itunes.apple.com/jp/app/id667861049?l=ja&amp;mt=8"
+                = link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?3547997460", alt: ""),"https://play.google.com/store/apps/details?id=com.kouzoh.mercari&amp;hl=ja"
       .buy-content.buy-user-info
         .buy-content-inner
           %h3 配送先
           %address.buy-user-text 
             .buy-user-text__postal_code 〒535-0035
-            .buy-user-text__adress 大阪市鶴見区浜1-3-21
-            .buy-user-text__user-name 中川 恵太
+            .buy-user-text__adress 大阪市鶴見区浜1-2-3
+            .buy-user-text__user-name 中川 しょこたん
           %p.buy-user-text
             = link_to "/", class: "buy-user-fix" do
               %span 変更する
